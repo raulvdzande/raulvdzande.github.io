@@ -1038,7 +1038,7 @@
     paintBackground();
 
     // ── SIDEBAR ───────────────────────────────────────────────────────────────
-    let sy = 42;
+    let sy = 56;
     const SX = 20;
     const SIW = SW - SX - 14;  // sidebar inner width
 
@@ -1055,26 +1055,26 @@
     setRGB(C.accentDim);
     doc.text('SOFTWARE DEVELOPER', SX, sy);
     doc.setCharSpace(0);
-    sy += 11;
+    sy += 13;
 
     // Name — stacked lines
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(23);
     setRGB(C.white);
-    doc.text('RAUL', SX, sy);          sy += 22;
-    doc.text('VAN DER', SX, sy);       sy += 22;
-    doc.text('ZANDE', SX, sy);         sy += 12;
+    doc.text('RAUL', SX, sy);          sy += 24;
+    doc.text('VAN DER', SX, sy);       sy += 24;
+    doc.text('ZANDE', SX, sy);         sy += 14;
 
     // Accent bar under name
     setFill(C.accent); fillRect(SX, sy, 40, 3, 1.5);
-    sy += 14;
+    sy += 16;
 
     // Sub-role
     doc.setFont('helvetica', 'bolditalic');
     doc.setFontSize(8);
     setRGB(C.frostDim);
     doc.text('.NET & Laravel Specialist', SX, sy);
-    sy += 14;
+    sy += 16;
 
     // ── Info rows ─────────────────────────────────────────────────────────────
     const infoRows = [
@@ -1087,7 +1087,7 @@
     for (const row of infoRows) {
       setFill(C.sidebarBg2);
       doc.setGState(new doc.GState({ opacity: 0.65 }));
-      fillRect(SX - 4, sy - 8.5, SIW + 8, 15, 3);
+      fillRect(SX - 4, sy - 11, SIW + 8, 17, 3);
       doc.setGState(new doc.GState({ opacity: 1.0 }));
 
       doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
@@ -1096,7 +1096,7 @@
 
       doc.setFontSize(7.8); setRGB(C.frostDim);
       doc.text(row.val, SX + 14, sy);
-      sy += 18;
+      sy += 20;
     }
     sy += 5;
 
@@ -1172,12 +1172,12 @@
       // Pill bg
       setFill([18, 36, 70]);
       doc.setGState(new doc.GState({ opacity: 0.8 }));
-      fillRect(tx, ty2 - 7, tw, 11, 3);
+      fillRect(tx, ty2 - 9, tw, 13, 3);
       doc.setGState(new doc.GState({ opacity: 1.0 }));
       // Pill border
       doc.setLineWidth(0.4); setDraw([60, 100, 145]);
       doc.setGState(new doc.GState({ opacity: 0.3 }));
-      strokeRect(tx, ty2 - 7, tw, 11, 3);
+      strokeRect(tx, ty2 - 9, tw, 13, 3);
       doc.setGState(new doc.GState({ opacity: 1.0 }));
 
       setRGB(C.frostDim);
@@ -1217,14 +1217,14 @@
     // ════════════════════════════════════════════════════════════════════════════
     // ── RIGHT CONTENT ──────────────────────────────────────────────────────────
     // ════════════════════════════════════════════════════════════════════════════
-    let cy = 44;
+    let cy = 58;
     const RX  = CX + 26;
     const RW  = CW - 40;
 
     // ── New page helper ───────────────────────────────────────────────────────
     function newPage() {
       doc.addPage();
-      cy = 32;
+      cy = 48;
       // Paint bg
       setFill(C.bodyBg); doc.rect(SW, 0, CW, PH, 'F');
       setFill(C.sidebarBg); doc.rect(0, 0, SW, PH, 'F');
@@ -1258,11 +1258,11 @@
       // Title
       doc.setFont('helvetica', 'bold'); doc.setFontSize(17); setRGB(C.ink);
       doc.text(title, RX, y);
-      y += 7;
+      y += 8;
       // Underline duo
       setFill(C.accent); fillRect(RX, y, 30, 3, 1.5);
       setFill(C.lineColor); fillRect(RX + 32, y, RW - 32, 0.7);
-      y += 13;
+      y += 15;
       return y;
     }
 
@@ -1294,12 +1294,12 @@
       const bx = RX + i * (statBoxW + 5);
 
       // Card
-      setFill(C.contentBg); fillRect(bx, cy - 9, statBoxW, 42, 5);
+      setFill(C.contentBg); fillRect(bx, cy - 13, statBoxW, 46, 5);
       // Top accent strip
-      setFill(C.accent); fillRect(bx, cy - 9, statBoxW, 3.5, 2.5);
+      setFill(C.accent); fillRect(bx, cy - 13, statBoxW, 3.5, 2.5);
       // Number
       doc.setFont('helvetica', 'bold'); doc.setFontSize(16); setRGB(C.ink);
-      doc.text(stats[i].num, bx + 9, cy + 11);
+      doc.text(stats[i].num, bx + 9, cy + 10);
       // Label
       doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.inkLight);
       doc.text(stats[i].sub, bx + 9, cy + 23);
@@ -1307,7 +1307,7 @@
       // Subtle border
       doc.setLineWidth(0.4); setDraw(C.lineColor);
       doc.setGState(new doc.GState({ opacity: 0.8 }));
-      doc.roundedRect(bx, cy-9, statBoxW, 42, 5, 5, 'S');
+      doc.roundedRect(bx, cy-13, statBoxW, 46, 5, 5, 'S');
       doc.setGState(new doc.GState({ opacity: 1.0 }));
     }
     cy += 52;
@@ -1364,16 +1364,16 @@
       if (cy > PH - 90) { newPage(); cy += 8; }
 
       // Card height estimate
-      const estH = 28 + proj.bullets.length * 14;
+      const estH = 34 + proj.bullets.length * 14;
 
       // Card background
-      setFill(C.contentBg); fillRect(RX - 8, cy - 9, RW + 8, estH, 5);
+      setFill(C.contentBg); fillRect(RX - 8, cy - 13, RW + 8, estH, 5);
       // Left accent strip
-      setFill(C.accent); fillRect(RX - 8, cy - 9, 3.5, estH, 2);
+      setFill(C.accent); fillRect(RX - 8, cy - 13, 3.5, estH, 2);
       // Card border
       doc.setLineWidth(0.4); setDraw(C.lineColor);
       doc.setGState(new doc.GState({ opacity: 0.7 }));
-      doc.roundedRect(RX - 8, cy - 9, RW + 8, estH, 5, 5, 'S');
+      doc.roundedRect(RX - 8, cy - 13, RW + 8, estH, 5, 5, 'S');
       doc.setGState(new doc.GState({ opacity: 1.0 }));
 
       // Title
@@ -1382,17 +1382,17 @@
 
       // Badge
       const bW = doc.getTextWidth(proj.b) + 12;
-      setFill(C.tagBg); fillRect(RX + RW - bW, cy - 8, bW, 12, 3);
+      setFill(C.tagBg); fillRect(RX + RW - bW, cy - 11, bW, 14, 3);
       doc.setLineWidth(0.35); setDraw([180, 200, 230]);
-      doc.roundedRect(RX + RW - bW, cy - 8, bW, 12, 3, 3, 'S');
+      doc.roundedRect(RX + RW - bW, cy - 11, bW, 14, 3, 3, 'S');
       doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5); setRGB(C.tagText);
       doc.text(proj.b, RX + RW - bW + 6, cy);
-      cy += 5;
+      cy += 6;
 
       // Divider under title
       setFill(C.accent); fillRect(RX + 4, cy, 22, 1.5, 0.75);
       setFill(C.lineColor); fillRect(RX + 28, cy, RW - 28 - bW - 6, 0.6);
-      cy += 9;
+      cy += 11;
 
       // Bullets
       for (const bull of proj.bullets) {
@@ -1423,12 +1423,12 @@
 
     for (const ed of edus) {
       if (cy > PH - 90) { newPage(); cy += 4; }
-      const cardH = 60;
-      setFill(C.contentBg); fillRect(RX - 8, cy - 10, RW + 8, cardH, 5);
-      setFill(C.accent); fillRect(RX - 8, cy - 10, 3.5, cardH, 2);
+      const cardH = 68;
+      setFill(C.contentBg); fillRect(RX - 8, cy - 14, RW + 8, cardH, 5);
+      setFill(C.accent); fillRect(RX - 8, cy - 14, 3.5, cardH, 2);
       doc.setLineWidth(0.4); setDraw(C.lineColor);
       doc.setGState(new doc.GState({ opacity: 0.6 }));
-      doc.roundedRect(RX - 8, cy - 10, RW + 8, cardH, 5, 5, 'S');
+      doc.roundedRect(RX - 8, cy - 14, RW + 8, cardH, 5, 5, 'S');
       doc.setGState(new doc.GState({ opacity: 1.0 }));
 
       doc.setFont('helvetica', 'bold'); doc.setFontSize(10.8); setRGB(C.ink);
@@ -1436,10 +1436,10 @@
 
       // Status badge
       const sW2 = doc.getTextWidth(ed.s) + 14;
-      setFill(C.tagBg); fillRect(RX + RW - sW2, cy - 8, sW2, 13, 3.5);
+      setFill(C.tagBg); fillRect(RX + RW - sW2, cy - 11, sW2, 14, 3.5);
       doc.setFont('helvetica', 'bold'); doc.setFontSize(6.8);
       setRGB(ed.sc); doc.text(ed.s, RX + RW - sW2 + 7, cy);
-      cy += 11;
+      cy += 13;
 
       doc.setFont('helvetica', 'normal'); doc.setFontSize(8.3); setRGB(C.inkMid);
       cy = wrapText(ed.body, RX + 4, cy, RW - 6, 13);
@@ -1461,15 +1461,15 @@
     for (let i = 0; i < extras.length; i++) {
       const ex = extras[i];
       const ex_x = RX + i * (halfRW + 10);
-      setFill(C.contentBg); fillRect(ex_x - 6, cy - 8, halfRW + 6, 74, 5);
-      setFill(C.accent); fillRect(ex_x - 6, cy - 8, halfRW + 6, 3.5, 2);
+      setFill(C.contentBg); fillRect(ex_x - 6, cy - 12, halfRW + 6, 80, 5);
+      setFill(C.accent); fillRect(ex_x - 6, cy - 12, halfRW + 6, 3.5, 2);
       doc.setLineWidth(0.4); setDraw(C.lineColor);
       doc.setGState(new doc.GState({ opacity: 0.6 }));
-      doc.roundedRect(ex_x - 6, cy - 8, halfRW + 6, 74, 5, 5, 'S');
+      doc.roundedRect(ex_x - 6, cy - 12, halfRW + 6, 80, 5, 5, 'S');
       doc.setGState(new doc.GState({ opacity: 1.0 }));
 
       doc.setFont('helvetica', 'bold'); doc.setFontSize(9.5); setRGB(C.ink);
-      doc.text(ex.h, ex_x, cy + 6);
+      doc.text(ex.h, ex_x, cy + 4);
       doc.setFont('helvetica', 'normal'); doc.setFontSize(8); setRGB(C.inkMid);
       wrapText(ex.body, ex_x, cy + 19, halfRW - 4, 13);
     }
