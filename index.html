@@ -33,7 +33,6 @@
       overflow-x: hidden;
     }
 
-    /* ── Atmospheric fixed bg ── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -59,7 +58,6 @@
       pointer-events: none; z-index: 0;
     }
 
-    /* ── Nav ── */
     nav {
       position: sticky; top: 0; z-index: 20;
       display: flex; align-items: center; justify-content: space-between;
@@ -79,10 +77,7 @@
       filter: drop-shadow(0 0 20px rgba(100,180,240,0.2));
     }
 
-    nav ul {
-      list-style: none;
-      display: flex; gap: 0.4rem; flex-wrap: wrap;
-    }
+    nav ul { list-style: none; display: flex; gap: 0.4rem; flex-wrap: wrap; }
 
     nav a {
       font-family: 'DM Mono', monospace;
@@ -99,13 +94,10 @@
       background: rgba(160,210,240,0.04);
     }
 
-    /* ── Hero ── */
     .hero {
-      position: relative;
-      min-height: 100svh;
+      position: relative; min-height: 100svh;
       display: grid; place-items: center;
-      padding: 0 2rem;
-      overflow: hidden;
+      padding: 0 2rem; overflow: hidden;
     }
 
     .hero-mountain {
@@ -194,21 +186,15 @@
       color: var(--muted);
     }
 
-    /* ── Page ── */
     .page {
       position: relative; z-index: 2;
       max-width: 1060px; margin: 0 auto;
       padding: 5rem 2rem 8rem;
     }
 
-    /* ── Section base ── */
-    .ar-section {
-      margin-bottom: 5rem;
-    }
+    .ar-section { margin-bottom: 5rem; }
 
-    .section-header {
-      margin-bottom: 2.5rem;
-    }
+    .section-header { margin-bottom: 2.5rem; }
 
     .s-eyebrow {
       font-family: 'DM Mono', monospace;
@@ -235,25 +221,19 @@
       margin-bottom: 5rem;
     }
 
-    /* ── Over mij ── */
     .about-grid {
       display: grid; grid-template-columns: 1fr 340px;
       gap: 2.5rem; align-items: start;
     }
 
-    .about-body p {
-      font-size: 0.95rem; color: var(--dim); line-height: 1.8;
-    }
-
+    .about-body p { font-size: 0.95rem; color: var(--dim); line-height: 1.8; }
     .about-body p + p { margin-top: 1rem; }
-
     .about-body strong { color: var(--frost); font-weight: 600; }
 
     .key-card {
       background: var(--surface);
       border: 1px solid var(--border); border-radius: 6px;
-      padding: 1.8rem;
-      position: relative; overflow: hidden;
+      padding: 1.8rem; position: relative; overflow: hidden;
     }
 
     .key-card::before {
@@ -267,8 +247,7 @@
     .key-card-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.55rem; letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--ice); opacity: 0.45;
-      margin-bottom: 1.2rem;
+      color: var(--ice); opacity: 0.45; margin-bottom: 1.2rem;
       display: flex; align-items: center; gap: 0.6rem;
     }
 
@@ -292,7 +271,6 @@
       content: '—'; color: var(--ice); opacity: 0.35; flex-shrink: 0;
     }
 
-    /* ── Skills ── */
     .skills-cols {
       display: grid; grid-template-columns: 1fr 280px;
       gap: 3rem; align-items: start;
@@ -327,9 +305,7 @@
       font-size: 1.5rem; letter-spacing: 0.05em; color: var(--frost); line-height: 1;
     }
 
-    .skill-meta {
-      display: flex; align-items: center; gap: 1rem;
-    }
+    .skill-meta { display: flex; align-items: center; gap: 1rem; }
 
     .skill-exp {
       font-family: 'DM Mono', monospace;
@@ -361,7 +337,6 @@
       font-size: 0.6rem; letter-spacing: 0.08em; color: var(--muted);
     }
 
-    /* tools panel */
     .tools-panel {
       background: var(--surface);
       border: 1px solid var(--border); border-radius: 6px;
@@ -371,8 +346,7 @@
     .tools-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.55rem; letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--ice); opacity: 0.45;
-      margin-bottom: 1.2rem;
+      color: var(--ice); opacity: 0.45; margin-bottom: 1.2rem;
       display: flex; align-items: center; gap: 0.6rem;
     }
 
@@ -380,18 +354,14 @@
       content: ''; width: 12px; height: 1px; background: var(--ice); opacity: 0.4;
     }
 
-    .pill-grid {
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
+    .pill-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 
     .t-pill {
       font-family: 'DM Mono', monospace;
       font-size: 0.58rem; letter-spacing: 0.1em;
       color: var(--muted);
       border: 1px solid var(--border); border-radius: 2px;
-      padding: 0.35rem 0.7rem;
-      transition: all 0.15s;
+      padding: 0.35rem 0.7rem; transition: all 0.15s;
     }
 
     .t-pill:hover {
@@ -402,19 +372,16 @@
     .tools-note {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem; letter-spacing: 0.08em; color: var(--muted);
-      line-height: 1.6;
-      padding-top: 1.2rem;
+      line-height: 1.6; padding-top: 1.2rem;
       border-top: 1px solid var(--border);
     }
 
-    /* ── Projects ── */
     .project-list { display: flex; flex-direction: column; gap: 1px; }
 
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border); border-radius: 4px;
-      padding: 1.8rem 2rem;
-      position: relative; transition: background 0.15s;
+      padding: 1.8rem 2rem; position: relative; transition: background 0.15s;
     }
 
     .project-card:hover { background: rgba(160,210,240,0.03); }
@@ -439,17 +406,14 @@
 
     .project-badge {
       font-family: 'DM Mono', monospace;
-      font-size: 0.58rem; letter-spacing: 0.12em;
-      color: var(--muted);
+      font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted);
       border: 1px solid var(--border); border-radius: 2px;
-      padding: 0.2rem 0.7rem;
-      white-space: nowrap;
+      padding: 0.2rem 0.7rem; white-space: nowrap;
     }
 
     .project-desc {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 0.92rem; color: var(--dim);
-      margin-bottom: 0.9rem;
+      font-size: 0.92rem; color: var(--dim); margin-bottom: 0.9rem;
     }
 
     .project-bullets {
@@ -466,14 +430,12 @@
       content: '—'; color: var(--ice); opacity: 0.3; flex-shrink: 0;
     }
 
-    /* ── Education timeline ── */
     .timeline { display: flex; flex-direction: column; gap: 1px; }
 
     .tl-item {
       background: var(--surface);
       border: 1px solid var(--border); border-radius: 4px;
-      padding: 1.8rem 2rem;
-      position: relative; transition: background 0.15s;
+      padding: 1.8rem 2rem; position: relative; transition: background 0.15s;
     }
 
     .tl-item:hover { background: rgba(160,210,240,0.03); }
@@ -494,26 +456,17 @@
     }
 
     .tl-status {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem; letter-spacing: 0.12em;
+      font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em;
       color: var(--green); opacity: 0.8;
       border: 1px solid rgba(110,231,183,0.2); border-radius: 2px;
       padding: 0.2rem 0.7rem; white-space: nowrap;
     }
 
-    .tl-status.done {
-      color: var(--muted);
-      border-color: var(--border);
-    }
+    .tl-status.done { color: var(--muted); border-color: var(--border); }
 
-    .tl-body {
-      font-size: 0.9rem; color: var(--dim); line-height: 1.75;
-    }
+    .tl-body { font-size: 0.9rem; color: var(--dim); line-height: 1.75; }
 
-    /* ── Extra ── */
-    .extra-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-    }
+    .extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
     .extra-card {
       background: var(--surface);
@@ -527,16 +480,14 @@
       margin-bottom: 0.7rem; line-height: 1;
     }
 
-    .extra-body {
-      font-size: 0.9rem; color: var(--dim); line-height: 1.75;
-    }
+    .extra-body { font-size: 0.9rem; color: var(--dim); line-height: 1.75; }
 
-    /* ── Download ── */
     .download-wrap {
       display: flex; align-items: center; justify-content: space-between;
       gap: 2rem; flex-wrap: wrap;
     }
 
+    /* ── Redesigned Download Button ── */
     .btn-dl {
       position: relative;
       font-family: 'DM Mono', monospace;
@@ -547,6 +498,7 @@
       cursor: pointer; overflow: hidden; isolation: isolate;
       transition: box-shadow 0.2s, transform 0.15s;
       box-shadow: 0 0 40px rgba(160,210,240,0.18), inset 0 1px 0 rgba(255,255,255,0.25);
+      display: flex; align-items: center; gap: 0.75rem;
     }
 
     .btn-dl::after {
@@ -566,13 +518,72 @@
     .btn-dl:hover::after { transform: translateY(0); }
     .btn-dl:active { transform: translateY(0); }
 
+    .btn-dl.loading { opacity: 0.7; pointer-events: none; }
+
     .dl-hint {
       font-family: 'Instrument Serif', serif; font-style: italic;
       font-size: 0.92rem; color: var(--dim);
       max-width: 420px; line-height: 1.7;
     }
 
-    /* ── Footer ── */
+    /* PDF Preview card */
+    .pdf-preview-card {
+      background: var(--surface);
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.5rem 2rem; margin-top: 2rem;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+
+    .pdf-preview-thumb {
+      width: 72px; height: 96px;
+      background: linear-gradient(135deg, #0a1629 0%, #0d1f3c 100%);
+      border-radius: 4px; border: 1px solid var(--border-hi);
+      flex-shrink: 0; position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+
+    .pdf-thumb-sidebar {
+      width: 22px; height: 100%;
+      background: rgba(160,210,240,0.08);
+      border-right: 1px solid rgba(160,210,240,0.12);
+      position: absolute; left: 0; top: 0;
+    }
+
+    .pdf-thumb-lines {
+      position: absolute; left: 28px; top: 14px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+
+    .pdf-thumb-line {
+      height: 2px; border-radius: 1px;
+      background: rgba(160,210,240,0.25);
+    }
+
+    .pdf-thumb-accent {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--ice);
+    }
+
+    .pdf-meta { flex: 1; }
+
+    .pdf-meta-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem; letter-spacing: 0.06em; color: var(--frost);
+      margin-bottom: 0.3rem;
+    }
+
+    .pdf-meta-info {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.12em; color: var(--muted);
+      display: flex; flex-wrap: wrap; gap: 1rem;
+    }
+
+    .pdf-meta-info span::before {
+      content: '·'; margin-right: 0.4rem; color: var(--ice); opacity: 0.5;
+    }
+
+    .pdf-meta-info span:first-child::before { display: none; }
+
     footer {
       position: relative; z-index: 2;
       border-top: 1px solid var(--border);
@@ -583,8 +594,7 @@
     }
 
     .footer-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem; letter-spacing: 0.06em;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.06em;
       background: linear-gradient(170deg, #fff 0%, var(--frost) 40%, var(--ice) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
@@ -595,7 +605,6 @@
       color: var(--muted);
     }
 
-    /* ── Animations ── */
     @keyframes rise {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -606,7 +615,11 @@
       100% { top: 100%; }
     }
 
-    /* ── Responsive ── */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
     @media (max-width: 780px) {
       nav { padding: 1rem 1.2rem; }
       .about-grid { grid-template-columns: 1fr; }
@@ -622,7 +635,6 @@
       .tl-top  { flex-direction: column; }
     }
 
-    /* ── Print ── */
     @media print {
       nav, .hero, footer { display: none !important; }
       body { background: white; color: black; }
@@ -635,7 +647,6 @@
 
 <div class="contours" aria-hidden="true"></div>
 
-<!-- ── Nav ── -->
 <nav>
   <span class="nav-logo">RvdZ</span>
   <ul>
@@ -648,7 +659,6 @@
   </ul>
 </nav>
 
-<!-- ── Hero ── -->
 <section class="hero">
   <svg class="hero-mountain" viewBox="0 0 1440 280" preserveAspectRatio="none" aria-hidden="true">
     <defs>
@@ -680,10 +690,8 @@
   </div>
 </section>
 
-<!-- ── Page content ── -->
 <main class="page">
 
-  <!-- OVER MIJ -->
   <section class="ar-section" id="over">
     <div class="section-header">
       <p class="s-eyebrow">Introductie</p>
@@ -691,21 +699,9 @@
     </div>
     <div class="about-grid">
       <div class="about-body">
-        <p>
-          Ik ben een gemotiveerde software developer van <strong>21 jaar</strong> met een sterke focus op
-          <strong>backend development</strong>, API-ontwerp en moderne webontwikkeling. In de afgelopen jaren
-          heb ik diverse studie-, stage- en hobbyprojecten uitgewerkt in .NET, Laravel, JavaScript, Kotlin en Python.
-        </p>
-        <p>
-          Momenteel volg ik een deeltijd <strong>HBO-opleiding Informatica</strong>, waardoor ik praktijkervaring
-          combineer met actuele theoretische kennis. Ik werk graag gestructureerd, ben gewend aan versiebeheer
-          en code reviews, en vind het belangrijk om clean code, beveiliging en performance serieus te nemen.
-        </p>
-        <p>
-          Ik zoek een rol voor <strong>32 uur per week</strong> waarin ik kan doorgroeien als
-          backend / full-stack developer, aan professionele codebases kan meewerken en tegelijk mijn
-          HBO-opleiding kan afronden.
-        </p>
+        <p>Ik ben een gemotiveerde software developer van <strong>21 jaar</strong> met een sterke focus op <strong>backend development</strong>, API-ontwerp en moderne webontwikkeling. In de afgelopen jaren heb ik diverse studie-, stage- en hobbyprojecten uitgewerkt in .NET, Laravel, JavaScript, Kotlin en Python.</p>
+        <p>Momenteel volg ik een deeltijd <strong>HBO-opleiding Informatica</strong>, waardoor ik praktijkervaring combineer met actuele theoretische kennis. Ik werk graag gestructureerd, ben gewend aan versiebeheer en code reviews, en vind het belangrijk om clean code, beveiliging en performance serieus te nemen.</p>
+        <p>Ik zoek een rol voor <strong>32 uur per week</strong> waarin ik kan doorgroeien als backend / full-stack developer, aan professionele codebases kan meewerken en tegelijk mijn HBO-opleiding kan afronden.</p>
       </div>
       <div class="key-card">
         <p class="key-card-label">Kernpunten</p>
@@ -722,7 +718,6 @@
 
   <div class="rule"></div>
 
-  <!-- SKILLS -->
   <section class="ar-section" id="skills">
     <div class="section-header">
       <p class="s-eyebrow">Stack &amp; ervaring</p>
@@ -730,69 +725,32 @@
     </div>
     <div class="skills-cols">
       <div class="skill-list">
-
         <div class="skill-row">
-          <div class="skill-top">
-            <span class="skill-name">C# .NET</span>
-            <div class="skill-meta">
-              <span class="skill-exp">± 4 jaar</span>
-              <span class="skill-lvl">4 / 5</span>
-            </div>
-          </div>
+          <div class="skill-top"><span class="skill-name">C# .NET</span><div class="skill-meta"><span class="skill-exp">± 4 jaar</span><span class="skill-lvl">4 / 5</span></div></div>
           <div class="skill-track"><div class="skill-fill" data-progress="85"></div></div>
           <span class="skill-tags">WPF · ASP.NET · REST API's · Entity Framework · Layered Architecture</span>
         </div>
-
         <div class="skill-row">
-          <div class="skill-top">
-            <span class="skill-name">PHP (Laravel)</span>
-            <div class="skill-meta">
-              <span class="skill-exp">± 3 jaar</span>
-              <span class="skill-lvl">3 / 5</span>
-            </div>
-          </div>
+          <div class="skill-top"><span class="skill-name">PHP (Laravel)</span><div class="skill-meta"><span class="skill-exp">± 3 jaar</span><span class="skill-lvl">3 / 5</span></div></div>
           <div class="skill-track"><div class="skill-fill" data-progress="70"></div></div>
           <span class="skill-tags">RESTful API's · Eloquent ORM · Auth · Validation · MVC</span>
         </div>
-
         <div class="skill-row">
-          <div class="skill-top">
-            <span class="skill-name">JavaScript</span>
-            <div class="skill-meta">
-              <span class="skill-exp">± 2,5 jaar</span>
-              <span class="skill-lvl">3 / 5</span>
-            </div>
-          </div>
+          <div class="skill-top"><span class="skill-name">JavaScript</span><div class="skill-meta"><span class="skill-exp">± 2,5 jaar</span><span class="skill-lvl">3 / 5</span></div></div>
           <div class="skill-track"><div class="skill-fill" data-progress="65"></div></div>
           <span class="skill-tags">ES6+ · React · Next.js · SPA / SSR · Fetch / Axios</span>
         </div>
-
         <div class="skill-row">
-          <div class="skill-top">
-            <span class="skill-name">Kotlin</span>
-            <div class="skill-meta">
-              <span class="skill-exp">± 1 jaar</span>
-              <span class="skill-lvl">2 / 5</span>
-            </div>
-          </div>
+          <div class="skill-top"><span class="skill-name">Kotlin</span><div class="skill-meta"><span class="skill-exp">± 1 jaar</span><span class="skill-lvl">2 / 5</span></div></div>
           <div class="skill-track"><div class="skill-fill" data-progress="45"></div></div>
           <span class="skill-tags">Android apps · REST clients · Backend API's</span>
         </div>
-
         <div class="skill-row">
-          <div class="skill-top">
-            <span class="skill-name">Python</span>
-            <div class="skill-meta">
-              <span class="skill-exp">± 1 jaar</span>
-              <span class="skill-lvl">2 / 5</span>
-            </div>
-          </div>
+          <div class="skill-top"><span class="skill-name">Python</span><div class="skill-meta"><span class="skill-exp">± 1 jaar</span><span class="skill-lvl">2 / 5</span></div></div>
           <div class="skill-track"><div class="skill-fill" data-progress="40"></div></div>
           <span class="skill-tags">Automation · AI / ML-basis · Scripting · Prototyping</span>
         </div>
-
       </div>
-
       <div class="tools-panel">
         <p class="tools-label">Tools &amp; werkwijze</p>
         <div class="pill-grid">
@@ -804,28 +762,21 @@
           <span class="t-pill">Clean code</span>
           <span class="t-pill">SOLID-principes</span>
         </div>
-        <p class="tools-note">
-          Talen: Nederlands (moedertaal) · Engels (vloeiend lezen/schrijven, goed spreken)
-        </p>
+        <p class="tools-note">Talen: Nederlands (moedertaal) · Engels (vloeiend lezen/schrijven, goed spreken)</p>
       </div>
     </div>
   </section>
 
   <div class="rule"></div>
 
-  <!-- PROJECTEN -->
   <section class="ar-section" id="projecten">
     <div class="section-header">
       <p class="s-eyebrow">Selectie van relevante projecten</p>
       <h2 class="s-title">Projecten</h2>
     </div>
     <div class="project-list">
-
       <div class="project-card">
-        <div class="project-top">
-          <span class="project-title">Racecar Management App</span>
-          <span class="project-badge">C# .NET · WPF · ASP.NET Web API</span>
-        </div>
+        <div class="project-top"><span class="project-title">Racecar Management App</span><span class="project-badge">C# .NET · WPF · ASP.NET Web API</span></div>
         <p class="project-desc">Desktop applicatie voor beheer en analyse van racecar-data, gekoppeld aan een eigen backend API.</p>
         <ul class="project-bullets">
           <li>Gebouwd met WPF als rijke desktop UI en een zelfontworpen ASP.NET Web API als backend.</li>
@@ -833,12 +784,8 @@
           <li>Structuur opgezet met duidelijke lagen (UI, business logic, data) en aandacht voor onderhoudbaarheid.</li>
         </ul>
       </div>
-
       <div class="project-card">
-        <div class="project-top">
-          <span class="project-title">Blog &amp; Reactieplatform</span>
-          <span class="project-badge">Next.js · JavaScript · REST API</span>
-        </div>
+        <div class="project-top"><span class="project-title">Blog &amp; Reactieplatform</span><span class="project-badge">Next.js · JavaScript · REST API</span></div>
         <p class="project-desc">Blogplatform met reactiesysteem, SEO-vriendelijk en performant opgebouwd.</p>
         <ul class="project-bullets">
           <li>Next.js met server-side rendering voor snelle laadtijden en goede SEO.</li>
@@ -846,12 +793,8 @@
           <li>Aandacht voor UI/UX, formuliervalidatie en gestructureerde component-architectuur.</li>
         </ul>
       </div>
-
       <div class="project-card">
-        <div class="project-top">
-          <span class="project-title">REST API's in Laravel</span>
-          <span class="project-badge">PHP · Laravel · REST</span>
-        </div>
+        <div class="project-top"><span class="project-title">REST API's in Laravel</span><span class="project-badge">PHP · Laravel · REST</span></div>
         <p class="project-desc">Meerdere kleinere API-projecten met focus op best practices en beveiliging.</p>
         <ul class="project-bullets">
           <li>Endpoints ontworpen volgens RESTful principles met duidelijke resource-structuur.</li>
@@ -859,12 +802,8 @@
           <li>Basisdocumentatie geschreven voor endpoints en response-structuren.</li>
         </ul>
       </div>
-
       <div class="project-card">
-        <div class="project-top">
-          <span class="project-title">RMC Android App</span>
-          <span class="project-badge">Kotlin · Android · Backend API</span>
-        </div>
+        <div class="project-top"><span class="project-title">RMC Android App</span><span class="project-badge">Kotlin · Android · Backend API</span></div>
         <p class="project-desc">Android app met een eigen Kotlin-backend voor data-synchronisatie.</p>
         <ul class="project-bullets">
           <li>Mobiele UI gebouwd volgens moderne Android-richtlijnen.</li>
@@ -872,12 +811,8 @@
           <li>Focus op stabiele netwerkcommunicatie en foutafhandeling in de app.</li>
         </ul>
       </div>
-
       <div class="project-card">
-        <div class="project-top">
-          <span class="project-title">Conversational Buddy Robot</span>
-          <span class="project-badge">Python · AI / NLP — lopend</span>
-        </div>
+        <div class="project-top"><span class="project-title">Conversational Buddy Robot</span><span class="project-badge">Python · AI / NLP — lopend</span></div>
         <p class="project-desc">Lopend project: een conversational buddy-robot die eenvoudige gesprekken kan voeren.</p>
         <ul class="project-bullets">
           <li>Experimenten met AI-/NLP-concepten in Python voor chatbot-functionaliteit.</li>
@@ -885,48 +820,30 @@
           <li>Gebruik van externe libraries en API's voor taalverwerking en logica.</li>
         </ul>
       </div>
-
     </div>
   </section>
 
   <div class="rule"></div>
 
-  <!-- OPLEIDING -->
   <section class="ar-section" id="opleiding">
     <div class="section-header">
       <p class="s-eyebrow">Opleidingsachtergrond</p>
       <h2 class="s-title">Opleiding</h2>
     </div>
     <div class="timeline">
-
       <div class="tl-item">
-        <div class="tl-top">
-          <span class="tl-title">HBO Informatica (deeltijd)</span>
-          <span class="tl-status">In opleiding</span>
-        </div>
-        <p class="tl-body">
-          Deeltijdopleiding Informatica met focus op softwareontwikkeling, software-architectuur, databases en
-          professionele vaardigheden. Dit maakt het mogelijk theorie direct te koppelen aan praktijkprojecten.
-        </p>
+        <div class="tl-top"><span class="tl-title">HBO Informatica (deeltijd)</span><span class="tl-status">In opleiding</span></div>
+        <p class="tl-body">Deeltijdopleiding Informatica met focus op softwareontwikkeling, software-architectuur, databases en professionele vaardigheden. Dit maakt het mogelijk theorie direct te koppelen aan praktijkprojecten.</p>
       </div>
-
       <div class="tl-item">
-        <div class="tl-top">
-          <span class="tl-title">MBO 4 Software Development</span>
-          <span class="tl-status done">Afgerond</span>
-        </div>
-        <p class="tl-body">
-          Brede basis gelegd in programmeren, webontwikkeling, object-oriëntatie en samenwerken in projecten.
-          Hier heb ik de basis voor mijn huidige .NET-, PHP- en JavaScript-vaardigheden ontwikkeld.
-        </p>
+        <div class="tl-top"><span class="tl-title">MBO 4 Software Development</span><span class="tl-status done">Afgerond</span></div>
+        <p class="tl-body">Brede basis gelegd in programmeren, webontwikkeling, object-oriëntatie en samenwerken in projecten. Hier heb ik de basis voor mijn huidige .NET-, PHP- en JavaScript-vaardigheden ontwikkeld.</p>
       </div>
-
     </div>
   </section>
 
   <div class="rule"></div>
 
-  <!-- EXTRA -->
   <section class="ar-section" id="extra">
     <div class="section-header">
       <p class="s-eyebrow">Werkwijze &amp; interesses</p>
@@ -935,41 +852,60 @@
     <div class="extra-grid">
       <div class="extra-card">
         <h3 class="extra-heading">Werkwijze</h3>
-        <p class="extra-body">
-          Gestructureerd, leergierig en kritisch op eigen code. Ik vind code reviews, documentatie en
-          versiebeheer belangrijk en sta open voor mentoring en feedback van ervaren collega's.
-        </p>
+        <p class="extra-body">Gestructureerd, leergierig en kritisch op eigen code. Ik vind code reviews, documentatie en versiebeheer belangrijk en sta open voor mentoring en feedback van ervaren collega's.</p>
       </div>
       <div class="extra-card">
         <h3 class="extra-heading">Interesses</h3>
-        <p class="extra-body">
-          Backend development, API's, webplatformen en het combineren van verschillende technologieën.
-          Daarnaast interesse in AI, automation en het bouwen van eigen tooling.
-        </p>
+        <p class="extra-body">Backend development, API's, webplatformen en het combineren van verschillende technologieën. Daarnaast interesse in AI, automation en het bouwen van eigen tooling.</p>
       </div>
     </div>
   </section>
 
   <div class="rule"></div>
 
-  <!-- DOWNLOAD -->
   <section class="ar-section" id="download">
     <div class="section-header">
       <p class="s-eyebrow">PDF-versie</p>
       <h2 class="s-title">CV downloaden</h2>
     </div>
     <div class="download-wrap">
-      <button class="btn-dl" onclick="downloadPDF()">Download CV als PDF</button>
-      <p class="dl-hint">
-        De PDF-versie bevat een compacte, één- of tweepagina-weergave van dezelfde informatie,
-        geoptimaliseerd voor recruiters en HR in Nederland.
-      </p>
+      <button class="btn-dl" id="downloadBtn" onclick="startDownload()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV als PDF
+      </button>
+      <p class="dl-hint">Professionele twee-koloms layout — donkere sidebar met skills en een heldere content-zijde. Geoptimaliseerd voor recruiters en HR.</p>
+    </div>
+
+    <!-- PDF preview card -->
+    <div class="pdf-preview-card">
+      <div class="pdf-preview-thumb">
+        <div class="pdf-thumb-accent"></div>
+        <div class="pdf-thumb-sidebar"></div>
+        <div class="pdf-thumb-lines">
+          <div class="pdf-thumb-line" style="width:38px"></div>
+          <div class="pdf-thumb-line" style="width:28px; opacity:.6"></div>
+          <div class="pdf-thumb-line" style="width:34px; margin-top:4px"></div>
+          <div class="pdf-thumb-line" style="width:22px; opacity:.5"></div>
+          <div class="pdf-thumb-line" style="width:30px; margin-top:4px"></div>
+          <div class="pdf-thumb-line" style="width:26px; opacity:.6"></div>
+          <div class="pdf-thumb-line" style="width:20px; opacity:.4"></div>
+        </div>
+      </div>
+      <div class="pdf-meta">
+        <p class="pdf-meta-name">CV_Raul_Van_der_Zande.pdf</p>
+        <div class="pdf-meta-info">
+          <span>Twee-koloms layout</span>
+          <span>Skill bars &amp; badges</span>
+          <span>Donkere sidebar</span>
+          <span>Stats overzicht</span>
+          <span>Paginanummering</span>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
-<!-- ── Footer ── -->
 <footer>
   <span class="footer-name">Raul van der Zande</span>
   <span class="footer-meta">Software Developer · .NET &amp; Laravel · Veghel · 32 u/week</span>
@@ -977,7 +913,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-  // Animate skill bars on scroll
+  // ── Skill bar animation ─────────────────────────────────────────────────────
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -991,7 +927,7 @@
   const skillsSection = document.querySelector('#skills');
   if (skillsSection) observer.observe(skillsSection);
 
-  // Smooth scroll
+  // ── Smooth scroll ───────────────────────────────────────────────────────────
   document.querySelectorAll('nav a').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
@@ -1000,100 +936,563 @@
     });
   });
 
-  // PDF
+  document.querySelectorAll('.skill-fill').forEach(b => b.style.width = '0%');
+
+  // ── Download trigger ────────────────────────────────────────────────────────
+  function startDownload() {
+    const btn = document.getElementById('downloadBtn');
+    btn.classList.add('loading');
+    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="animation:spin 0.8s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Genereren...`;
+    setTimeout(() => {
+      downloadPDF();
+      btn.classList.remove('loading');
+      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download CV als PDF`;
+    }, 200);
+  }
+
+  // ════════════════════════════════════════════════════════════════════════════
+  // ── BEAUTIFUL PDF GENERATOR ─────────────────────────────────────────────────
+  // ════════════════════════════════════════════════════════════════════════════
   function downloadPDF() {
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({ unit: 'pt', format: 'a4' });
-    const W = doc.internal.pageSize.getWidth();
-    const M = 40;
-    let y = 50;
+    const doc = new jsPDF({ unit: 'pt', format: 'a4', orientation: 'portrait' });
 
-    const section = (title) => {
-      if (y > 700) { doc.addPage(); y = 50; }
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(13);
-      doc.setTextColor(30, 64, 175);
-      doc.text(title, M, y);
-      y += 14;
+    const PW = doc.internal.pageSize.getWidth();
+    const PH = doc.internal.pageSize.getHeight();
+
+    // ── Colour palette ─────────────────────────────────────────────────────────
+    const C = {
+      sidebarBg   : [6,  12, 26],
+      sidebarBg2  : [12, 22, 48],
+      accent      : [130, 195, 235],
+      accentDim   : [80,  140, 185],
+      accentBright: [180, 220, 248],
+      frost       : [210, 232, 255],
+      frostDim    : [155, 190, 215],
+      frostMuted  : [90,  120, 150],
+      white       : [255, 255, 255],
+      bodyBg      : [247, 249, 253],
+      contentBg   : [255, 255, 255],
+      ink         : [16,  26,  50],
+      inkMid      : [52,  72, 102],
+      inkLight    : [98,  118, 152],
+      inkMuted    : [148, 163, 183],
+      green       : [68,  190, 140],
+      lineColor   : [218, 226, 240],
+      tagBg       : [234, 241, 252],
+      tagText     : [68,  98, 142],
+      statBg      : [240, 245, 255],
     };
 
-    const body = (text) => {
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(9);
-      doc.setTextColor(55, 65, 81);
-      const lines = doc.splitTextToSize(text, W - M * 2);
-      doc.text(lines, M, y);
-      y += lines.length * 12 + 4;
-    };
+    const SW = 190;
+    const CX = SW;
+    const CW = PW - SW;
 
-    const bullet = (text) => {
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(9);
-      doc.setTextColor(55, 65, 81);
-      const lines = doc.splitTextToSize('• ' + text, W - M * 2 - 8);
-      doc.text(lines, M + 8, y);
-      y += lines.length * 12;
-    };
+    // ── helpers ───────────────────────────────────────────────────────────────
+    const setRGB  = (col) => doc.setTextColor(...col);
+    const setFill = (col) => doc.setFillColor(...col);
+    const setDraw = (col) => doc.setDrawColor(...col);
 
-    // Header
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(22);
-    doc.setTextColor(20, 30, 60);
-    doc.text('Raul van der Zande', M, y); y += 20;
+    function fillRect(x, y, w, h, r=0) {
+      if (r > 0) doc.roundedRect(x, y, w, h, r, r, 'F');
+      else { doc.rect(x, y, w, h, 'F'); }
+    }
 
+    function strokeRect(x, y, w, h, r=0) {
+      if (r > 0) doc.roundedRect(x, y, w, h, r, r, 'S');
+      else doc.rect(x, y, w, h, 'S');
+    }
+
+    function hline(x1, x2, y, thickness=0.5) {
+      doc.setLineWidth(thickness);
+      doc.line(x1, y, x2, y);
+    }
+
+    function wrapText(str, x, y, maxW, lineH=13) {
+      const lines = doc.splitTextToSize(str, maxW);
+      doc.text(lines, x, y);
+      return y + lines.length * lineH;
+    }
+
+    // ── Fill page backgrounds ─────────────────────────────────────────────────
+    function paintBackground() {
+      // Right content background
+      setFill(C.bodyBg); fillRect(SW, 0, CW, PH);
+      // Sidebar
+      setFill(C.sidebarBg); fillRect(0, 0, SW, PH);
+      // Sidebar subtle gradient at top
+      setFill([14, 26, 58]);
+      doc.setGState(new doc.GState({ opacity: 0.25 }));
+      fillRect(0, 0, SW, 240);
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      // Accent top strips
+      setFill(C.accent); fillRect(0, 0, SW, 4);
+      setFill(C.accent); fillRect(SW, 0, CW, 4);
+      // Sidebar right shadow
+      setFill([0,0,0]);
+      doc.setGState(new doc.GState({ opacity: 0.12 }));
+      fillRect(SW - 8, 0, 8, PH);
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+    }
+
+    paintBackground();
+
+    // ── SIDEBAR ───────────────────────────────────────────────────────────────
+    let sy = 42;
+    const SX = 20;
+    const SIW = SW - SX - 14;  // sidebar inner width
+
+    // Decorative circle behind name
+    setFill([130, 195, 235]);
+    doc.setGState(new doc.GState({ opacity: 0.05 }));
+    doc.ellipse(SW/2, sy+38, 72, 58, 'F');
+    doc.setGState(new doc.GState({ opacity: 1.0 }));
+
+    // Eyebrow
     doc.setFont('helvetica', 'normal');
-    doc.setFontSize(11);
-    doc.setTextColor(70, 90, 120);
-    doc.text('Software Developer – .NET & Laravel', M, y); y += 16;
+    doc.setFontSize(6.2);
+    doc.setCharSpace(2.4);
+    setRGB(C.accentDim);
+    doc.text('SOFTWARE DEVELOPER', SX, sy);
+    doc.setCharSpace(0);
+    sy += 11;
 
-    doc.setFontSize(9);
-    doc.setTextColor(90, 100, 120);
-    doc.text('Veghel, Nederland  |  21 jaar  |  32 uur/week  |  Deeltijd HBO Informatica', M, y); y += 24;
+    // Name — stacked lines
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(23);
+    setRGB(C.white);
+    doc.text('RAUL', SX, sy);          sy += 22;
+    doc.text('VAN DER', SX, sy);       sy += 22;
+    doc.text('ZANDE', SX, sy);         sy += 12;
 
-    section('Over mij');
-    body('Ambitieuze backend-georiënteerde developer met 4 jaar .NET, 3 jaar Laravel, 2,5 jaar JavaScript en aanvullende ervaring in Kotlin en Python. Alle ervaring via studie-, stage- en hobbyprojecten (nog geen commerciële werkervaring). Gericht op betrouwbare API\'s en moderne webapplicaties.');
-    y += 6;
+    // Accent bar under name
+    setFill(C.accent); fillRect(SX, sy, 40, 3, 1.5);
+    sy += 14;
 
-    section('Technische vaardigheden');
-    ['C# .NET – ± 4 jaar (WPF, ASP.NET, REST API\'s, Entity Framework)',
-     'PHP (Laravel) – ± 3 jaar (RESTful API\'s, Eloquent, Auth, Validation)',
-     'JavaScript – ± 2,5 jaar (ES6+, React, Next.js, SPA/SSR)',
-     'Kotlin – ± 1 jaar (Android apps, REST clients, backend API\'s)',
-     'Python – ± 1 jaar (automation, AI/ML-basis, scripting)'].forEach(bullet);
-    y += 4;
-    body('Overige: Git, GitHub/GitLab, REST & JSON, SQL-basis, CI/CD-basis, clean code, SOLID-principes.');
-    y += 6;
+    // Sub-role
+    doc.setFont('helvetica', 'bolditalic');
+    doc.setFontSize(8);
+    setRGB(C.frostDim);
+    doc.text('.NET & Laravel Specialist', SX, sy);
+    sy += 14;
 
-    section('Projecten');
-    [
-      ['Racecar Management App – C# .NET (WPF + ASP.NET Web API)', 'Desktopapplicatie voor beheer van racecar-data met eigen backend API en gelaagde architectuur.'],
-      ['Blog & Reactieplatform – Next.js (JavaScript)', 'Blogplatform met SSR, reactiesysteem, component-architectuur en formuliervalidatie.'],
-      ['REST API\'s – PHP (Laravel)', 'Meerdere RESTful API\'s met auth, validatie, foutafhandeling en basisdocumentatie.'],
-      ['RMC Android App – Kotlin (Android + backend)', 'Android-app met eigen Kotlin-backend, data-synchronisatie en stabiele netwerkcommunicatie.'],
-      ['Conversational Buddy Robot – Python (AI/NLP)', 'Conversational AI experiment met modulaire opzet en externe NLP-libraries.'],
-    ].forEach(([title, desc]) => {
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(9);
-      doc.setTextColor(30, 64, 175);
-      if (y > 720) { doc.addPage(); y = 50; }
-      doc.text('• ' + title, M + 4, y); y += 12;
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(55, 65, 81);
-      const lines = doc.splitTextToSize('  ' + desc, W - M * 2 - 12);
-      doc.text(lines, M + 8, y);
-      y += lines.length * 12 + 4;
-    });
-    y += 4;
+    // ── Info rows ─────────────────────────────────────────────────────────────
+    const infoRows = [
+      { sym: '◉', val: 'Veghel, Nederland' },
+      { sym: '◈', val: '21 jaar' },
+      { sym: '◷', val: '32 uur / week' },
+      { sym: '⬡', val: 'HBO Informatica' },
+    ];
 
-    section('Opleiding');
-    bullet('HBO Informatica (deeltijd) – huidig, in opleiding');
-    bullet('MBO 4 Software Development – afgerond');
+    for (const row of infoRows) {
+      setFill(C.sidebarBg2);
+      doc.setGState(new doc.GState({ opacity: 0.65 }));
+      fillRect(SX - 4, sy - 8.5, SIW + 8, 15, 3);
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
+      setRGB(C.accent);
+      doc.text(row.sym, SX + 2, sy);
+
+      doc.setFontSize(7.8); setRGB(C.frostDim);
+      doc.text(row.val, SX + 14, sy);
+      sy += 18;
+    }
+    sy += 5;
+
+    // ── Sidebar divider ───────────────────────────────────────────────────────
+    function sDiv(y) {
+      setDraw([60, 100, 140]);
+      doc.setGState(new doc.GState({ opacity: 0.22 }));
+      hline(SX, SW - 14, y, 0.6);
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      return y + 13;
+    }
+
+    // ── Sidebar section heading ───────────────────────────────────────────────
+    function sHead(label, y) {
+      // Accent dot
+      setFill(C.accent); fillRect(SX - 8, y - 5.5, 4, 4, 2);
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(6.3);
+      doc.setCharSpace(2.1); setRGB(C.accent);
+      doc.text(label, SX, y);
+      doc.setCharSpace(0);
+      return y + 13;
+    }
+
+    sy = sDiv(sy);
+
+    // ── SKILLS ────────────────────────────────────────────────────────────────
+    sy = sHead('VAARDIGHEDEN', sy);
+
+    const skills = [
+      { name: 'C# .NET',       pct: 85, yrs: '4 jr',   lvl: '4/5' },
+      { name: 'PHP (Laravel)', pct: 70, yrs: '3 jr',   lvl: '3/5' },
+      { name: 'JavaScript',    pct: 65, yrs: '2.5 jr', lvl: '3/5' },
+      { name: 'Kotlin',        pct: 45, yrs: '1 jr',   lvl: '2/5' },
+      { name: 'Python',        pct: 40, yrs: '1 jr',   lvl: '2/5' },
+    ];
+
+    for (const sk of skills) {
+      // Name
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(8.8); setRGB(C.frost);
+      doc.text(sk.name, SX, sy);
+      // Years right
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.8); setRGB(C.frostMuted);
+      doc.text(sk.yrs, SW - 40, sy);
+      // Level badge
+      doc.setFontSize(6.5); setRGB(C.accentDim);
+      doc.text(sk.lvl, SW - 22, sy);
+      sy += 6;
+
+      // Track bg
+      setFill([18, 32, 62]); fillRect(SX, sy, SIW, 4.5, 2.2);
+      // Filled portion
+      const fw = Math.round((sk.pct / 100) * SIW);
+      setFill(C.accent); fillRect(SX, sy, fw, 4.5, 2.2);
+      // Glow cap
+      setFill(C.accentBright); fillRect(SX + fw - 3.5, sy + 0.5, 3.5, 3.5, 1.75);
+
+      sy += 13;
+    }
+
+    sy = sDiv(sy);
+
+    // ── TOOLS ─────────────────────────────────────────────────────────────────
+    sy = sHead('TOOLS & WERKWIJZE', sy);
+
+    const tools = ['Git / GitHub', 'GitLab', 'REST & JSON', 'Agile/Scrum', 'SQL', 'CI/CD', 'Clean Code', 'SOLID'];
+    let tx = SX, ty2 = sy;
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(6.8);
+
+    for (const t of tools) {
+      const tw = doc.getTextWidth(t) + 10;
+      if (tx + tw > SW - 10) { tx = SX; ty2 += 15; }
+
+      // Pill bg
+      setFill([18, 36, 70]);
+      doc.setGState(new doc.GState({ opacity: 0.8 }));
+      fillRect(tx, ty2 - 7, tw, 11, 3);
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      // Pill border
+      doc.setLineWidth(0.4); setDraw([60, 100, 145]);
+      doc.setGState(new doc.GState({ opacity: 0.3 }));
+      strokeRect(tx, ty2 - 7, tw, 11, 3);
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+
+      setRGB(C.frostDim);
+      doc.text(t, tx + 5, ty2);
+      tx += tw + 5;
+    }
+    sy = ty2 + 17;
+    sy = sDiv(sy);
+
+    // ── TALEN ─────────────────────────────────────────────────────────────────
+    sy = sHead('TALEN', sy);
+    const langs = [
+      { name: 'Nederlands', level: 'Moedertaal', pct: 100 },
+      { name: 'Engels',     level: 'Vloeiend',   pct: 82 },
+    ];
+    for (const lg of langs) {
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); setRGB(C.frost);
+      doc.text(lg.name, SX, sy);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.accentDim);
+      const lw = doc.getTextWidth(lg.level);
+      doc.text(lg.level, SW - lw - 14, sy);
+      sy += 6;
+      setFill([18, 32, 62]); fillRect(SX, sy, SIW, 3.5, 1.75);
+      setFill(C.accent); fillRect(SX, sy, Math.round((lg.pct/100)*SIW), 3.5, 1.75);
+      sy += 13;
+    }
+
+    // ── Sidebar footer ────────────────────────────────────────────────────────
+    const sFootY = PH - 48;
+    sDiv(sFootY);
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.frostMuted);
+    doc.text('Beschikbaar per direct', SX, sFootY + 13);
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(7.2); setRGB(C.accentDim);
+    doc.text('Veghel, Nederland', SX, sFootY + 24);
+
+
+    // ════════════════════════════════════════════════════════════════════════════
+    // ── RIGHT CONTENT ──────────────────────────────────────────────────────────
+    // ════════════════════════════════════════════════════════════════════════════
+    let cy = 44;
+    const RX  = CX + 26;
+    const RW  = CW - 40;
+
+    // ── New page helper ───────────────────────────────────────────────────────
+    function newPage() {
+      doc.addPage();
+      cy = 32;
+      // Paint bg
+      setFill(C.bodyBg); doc.rect(SW, 0, CW, PH, 'F');
+      setFill(C.sidebarBg); doc.rect(0, 0, SW, PH, 'F');
+      setFill([14,26,58]);
+      doc.setGState(new doc.GState({ opacity: 0.2 }));
+      doc.rect(0, 0, SW, PH, 'F');
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      setFill(C.accent); doc.rect(0, 0, SW, 4, 'F');
+      setFill(C.accent); doc.rect(SW, 0, CW, 4, 'F');
+      setFill([0,0,0]);
+      doc.setGState(new doc.GState({ opacity: 0.1 }));
+      doc.rect(SW-8, 0, 8, PH, 'F');
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      // Sidebar mini header
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); setRGB(C.frost);
+      doc.text('RAUL VAN DER ZANDE', SX, 20);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5); doc.setCharSpace(1.5);
+      setRGB(C.frostMuted); doc.text('SOFTWARE DEVELOPER', SX, 30);
+      doc.setCharSpace(0);
+    }
+
+    // ── Content section heading ───────────────────────────────────────────────
+    function cHead(title, eyebrow, y) {
+      if (y > PH - 110) { newPage(); y = cy; }
+      // Eyebrow
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.3);
+      doc.setCharSpace(2.0); setRGB(C.inkMuted);
+      doc.text(eyebrow.toUpperCase(), RX, y);
+      doc.setCharSpace(0);
+      y += 12;
+      // Title
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(17); setRGB(C.ink);
+      doc.text(title, RX, y);
+      y += 7;
+      // Underline duo
+      setFill(C.accent); fillRect(RX, y, 30, 3, 1.5);
+      setFill(C.lineColor); fillRect(RX + 32, y, RW - 32, 0.7);
+      y += 13;
+      return y;
+    }
+
+    // ── OVER MIJ ──────────────────────────────────────────────────────────────
+    cy = cHead('Over mij', 'Introductie', cy);
+
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(8.8); setRGB(C.inkMid);
+    cy = wrapText(
+      'Ambitieuze backend-georiënteerde developer van 21 jaar met een brede ervaring in .NET, Laravel, JavaScript, Kotlin en Python — opgebouwd via studie-, stage- en hobbyprojecten. Ik schrijf graag clean, goed gedocumenteerde code en werk gestructureerd.',
+      RX, cy, RW, 13.5
+    );
+    cy += 7;
+    cy = wrapText(
+      'Momenteel volg ik een deeltijd HBO-opleiding Informatica, waarmee ik theorie direct koppel aan praktijk. Ik zoek een rol voor 32 uur/week als backend of full-stack developer.',
+      RX, cy, RW, 13.5
+    );
+    cy += 18;
+
+    // ── Stats row ─────────────────────────────────────────────────────────────
+    const stats = [
+      { num: '4 jr',   sub: 'C# .NET' },
+      { num: '3 jr',   sub: 'Laravel' },
+      { num: '2.5 jr', sub: 'JS/React' },
+      { num: '5+',     sub: 'Projecten' },
+    ];
+
+    const statBoxW = (RW - 15) / 4;
+    for (let i = 0; i < stats.length; i++) {
+      const bx = RX + i * (statBoxW + 5);
+
+      // Card
+      setFill(C.contentBg); fillRect(bx, cy - 9, statBoxW, 42, 5);
+      // Top accent strip
+      setFill(C.accent); fillRect(bx, cy - 9, statBoxW, 3.5, 2.5);
+      // Number
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(16); setRGB(C.ink);
+      doc.text(stats[i].num, bx + 9, cy + 11);
+      // Label
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.inkLight);
+      doc.text(stats[i].sub, bx + 9, cy + 23);
+
+      // Subtle border
+      doc.setLineWidth(0.4); setDraw(C.lineColor);
+      doc.setGState(new doc.GState({ opacity: 0.8 }));
+      doc.roundedRect(bx, cy-9, statBoxW, 42, 5, 5, 'S');
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+    }
+    cy += 52;
+
+    // ── PROJECTEN ─────────────────────────────────────────────────────────────
+    cy = cHead('Projecten', 'Selectie van relevante projecten', cy);
+
+    const projects = [
+      {
+        t: 'Racecar Management App',
+        b: 'C# .NET · WPF · ASP.NET Web API',
+        bullets: [
+          'WPF desktop UI met eigen ASP.NET Web API als backend.',
+          'CRUD, filtering, validatie en real-time UI-updates geïmplementeerd.',
+          'Gelaagde architectuur: UI layer, business logic, data layer.',
+        ]
+      },
+      {
+        t: 'Blog & Reactieplatform',
+        b: 'Next.js · JavaScript · REST API',
+        bullets: [
+          'Next.js met server-side rendering voor snelle laadtijden en goede SEO.',
+          'Posts schrijven, lezen en reageren — real-time bijgewerkt.',
+          'Component-architectuur, formuliervalidatie en UI/UX-aandacht.',
+        ]
+      },
+      {
+        t: "REST API's in Laravel",
+        b: 'PHP · Laravel · REST',
+        bullets: [
+          'RESTful endpoints met resource-structuur, auth-middleware.',
+          'Validatie, foutafhandeling en basisdocumentatie van endpoints.',
+        ]
+      },
+      {
+        t: 'RMC Android App',
+        b: 'Kotlin · Android · Backend API',
+        bullets: [
+          'Mobiele UI met eigen Kotlin-backend voor data-synchronisatie.',
+          'Stabiele netwerkcommunicatie en uitgebreide foutafhandeling.',
+        ]
+      },
+      {
+        t: 'Conversational Buddy Robot',
+        b: 'Python · AI/NLP — lopend',
+        bullets: [
+          'Conversational AI experiment met externe NLP-libraries.',
+          'Modulaire opzet voor eenvoudige uitbreiding van functionaliteiten.',
+        ]
+      },
+    ];
+
+    for (const proj of projects) {
+      if (cy > PH - 90) { newPage(); cy += 8; }
+
+      // Card height estimate
+      const estH = 28 + proj.bullets.length * 14;
+
+      // Card background
+      setFill(C.contentBg); fillRect(RX - 8, cy - 9, RW + 8, estH, 5);
+      // Left accent strip
+      setFill(C.accent); fillRect(RX - 8, cy - 9, 3.5, estH, 2);
+      // Card border
+      doc.setLineWidth(0.4); setDraw(C.lineColor);
+      doc.setGState(new doc.GState({ opacity: 0.7 }));
+      doc.roundedRect(RX - 8, cy - 9, RW + 8, estH, 5, 5, 'S');
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+
+      // Title
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); setRGB(C.ink);
+      doc.text(proj.t, RX + 4, cy);
+
+      // Badge
+      const bW = doc.getTextWidth(proj.b) + 12;
+      setFill(C.tagBg); fillRect(RX + RW - bW, cy - 8, bW, 12, 3);
+      doc.setLineWidth(0.35); setDraw([180, 200, 230]);
+      doc.roundedRect(RX + RW - bW, cy - 8, bW, 12, 3, 3, 'S');
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5); setRGB(C.tagText);
+      doc.text(proj.b, RX + RW - bW + 6, cy);
+      cy += 5;
+
+      // Divider under title
+      setFill(C.accent); fillRect(RX + 4, cy, 22, 1.5, 0.75);
+      setFill(C.lineColor); fillRect(RX + 28, cy, RW - 28 - bW - 6, 0.6);
+      cy += 9;
+
+      // Bullets
+      for (const bull of proj.bullets) {
+        setFill(C.accent); fillRect(RX + 6, cy - 4.5, 4.5, 4.5, 2.25);
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(7.8); setRGB(C.inkMid);
+        cy = wrapText(bull, RX + 16, cy, RW - 18, 12.5);
+        cy += 2;
+      }
+      cy += 10;
+    }
+
+    // ── OPLEIDING ─────────────────────────────────────────────────────────────
+    if (cy > PH - 140) { newPage(); cy += 6; }
+    cy = cHead('Opleiding', 'Opleidingsachtergrond', cy);
+
+    const edus = [
+      {
+        t: 'HBO Informatica (deeltijd)',
+        s: 'In opleiding', sc: C.green,
+        body: 'Deeltijdopleiding met focus op softwareontwikkeling, architectuur, databases en professionele vaardigheden. Theorie wordt direct gekoppeld aan praktijkprojecten.'
+      },
+      {
+        t: 'MBO 4 Software Development',
+        s: 'Afgerond', sc: C.inkLight,
+        body: 'Brede basis in programmeren, webontwikkeling, OOP en projectsamenwerking. Fundament voor .NET, PHP en JavaScript-vaardigheden.'
+      },
+    ];
+
+    for (const ed of edus) {
+      if (cy > PH - 90) { newPage(); cy += 4; }
+      const cardH = 60;
+      setFill(C.contentBg); fillRect(RX - 8, cy - 10, RW + 8, cardH, 5);
+      setFill(C.accent); fillRect(RX - 8, cy - 10, 3.5, cardH, 2);
+      doc.setLineWidth(0.4); setDraw(C.lineColor);
+      doc.setGState(new doc.GState({ opacity: 0.6 }));
+      doc.roundedRect(RX - 8, cy - 10, RW + 8, cardH, 5, 5, 'S');
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(10.8); setRGB(C.ink);
+      doc.text(ed.t, RX + 4, cy);
+
+      // Status badge
+      const sW2 = doc.getTextWidth(ed.s) + 14;
+      setFill(C.tagBg); fillRect(RX + RW - sW2, cy - 8, sW2, 13, 3.5);
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(6.8);
+      setRGB(ed.sc); doc.text(ed.s, RX + RW - sW2 + 7, cy);
+      cy += 11;
+
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(8.3); setRGB(C.inkMid);
+      cy = wrapText(ed.body, RX + 4, cy, RW - 6, 13);
+      cy += 16;
+    }
+
+    cy += 6;
+
+    // ── EXTRA ─────────────────────────────────────────────────────────────────
+    if (cy > PH - 110) { newPage(); cy += 4; }
+    cy = cHead('Extra & Persoonlijk', 'Werkwijze & interesses', cy);
+
+    const extras = [
+      { h: 'Werkwijze', body: 'Gestructureerd, leergierig en kritisch op eigen code. Code reviews, documentatie en versiebeheer zijn belangrijk. Open voor mentoring en feedback.' },
+      { h: 'Interesses', body: 'Backend development, API-ontwerp en webplatformen. Daarnaast AI, automation en het bouwen van eigen tooling en experimenten.' },
+    ];
+
+    const halfRW = (RW - 10) / 2;
+    for (let i = 0; i < extras.length; i++) {
+      const ex = extras[i];
+      const ex_x = RX + i * (halfRW + 10);
+      setFill(C.contentBg); fillRect(ex_x - 6, cy - 8, halfRW + 6, 74, 5);
+      setFill(C.accent); fillRect(ex_x - 6, cy - 8, halfRW + 6, 3.5, 2);
+      doc.setLineWidth(0.4); setDraw(C.lineColor);
+      doc.setGState(new doc.GState({ opacity: 0.6 }));
+      doc.roundedRect(ex_x - 6, cy - 8, halfRW + 6, 74, 5, 5, 'S');
+      doc.setGState(new doc.GState({ opacity: 1.0 }));
+
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(9.5); setRGB(C.ink);
+      doc.text(ex.h, ex_x, cy + 6);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(8); setRGB(C.inkMid);
+      wrapText(ex.body, ex_x, cy + 19, halfRW - 4, 13);
+    }
+
+    // ── Page footer on every page ─────────────────────────────────────────────
+    const total = doc.internal.getNumberOfPages();
+    for (let p = 1; p <= total; p++) {
+      doc.setPage(p);
+      // Footer line
+      setDraw(C.lineColor); doc.setLineWidth(0.5);
+      hline(CX + 10, PW - 20, PH - 22, 0.5);
+      // Page number
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.inkMuted);
+      doc.text(`${p} / ${total}`, PW - 28, PH - 12);
+      // Name watermark footer
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.3); doc.setCharSpace(1.1);
+      setRGB(C.inkMuted);
+      doc.text('RAUL VAN DER ZANDE · SOFTWARE DEVELOPER', RX, PH - 12);
+      doc.setCharSpace(0);
+    }
 
     doc.save('CV_Raul_Van_der_Zande.pdf');
   }
-
-  // Init bars
-  document.querySelectorAll('.skill-fill').forEach(b => b.style.width = '0%');
 </script>
 </body>
 </html>
