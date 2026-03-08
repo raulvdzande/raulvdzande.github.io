@@ -652,6 +652,7 @@
   <ul>
     <li><a href="#over">Over mij</a></li>
     <li><a href="#skills">Vaardigheden</a></li>
+    <li><a href="#stage">Stage</a></li>
     <li><a href="#projecten">Projecten</a></li>
     <li><a href="#opleiding">Opleiding</a></li>
     <li><a href="#extra">Extra</a></li>
@@ -699,18 +700,18 @@
     </div>
     <div class="about-grid">
       <div class="about-body">
-        <p>Ik ben een gemotiveerde software developer van <strong>21 jaar</strong> met een sterke focus op <strong>backend development</strong>, API-ontwerp en moderne webontwikkeling. In de afgelopen jaren heb ik diverse studie-, stage- en hobbyprojecten uitgewerkt in .NET, Laravel, JavaScript, Kotlin en Python.</p>
-        <p>Momenteel volg ik een deeltijd <strong>HBO-opleiding Informatica</strong>, waardoor ik praktijkervaring combineer met actuele theoretische kennis. Ik werk graag gestructureerd, ben gewend aan versiebeheer en code reviews, en vind het belangrijk om clean code, beveiliging en performance serieus te nemen.</p>
+        <p>Ik ben een gemotiveerde software developer van <strong>21 jaar</strong> met een sterke focus op <strong>backend development</strong>, API-ontwerp en moderne webontwikkeling. Mijn technische kennis heb ik opgebouwd via studie, twee stages en eigen projecten — ik heb nog geen betaalde werkervaring in loondienst.</p>
+        <p>Ik heb <strong>2 stages van elk 6 maanden</strong> gelopen (totaal 1 jaar stage-ervaring), waardoor ik weet hoe het is om professioneel samen te werken, met deadlines te werken en code reviews te doorlopen. Momenteel volg ik een deeltijd <strong>HBO-opleiding Informatica</strong>.</p>
         <p>Ik zoek een rol voor <strong>32 uur per week</strong> waarin ik kan doorgroeien als backend / full-stack developer, aan professionele codebases kan meewerken en tegelijk mijn HBO-opleiding kan afronden.</p>
       </div>
       <div class="key-card">
         <p class="key-card-label">Kernpunten</p>
         <ul class="key-list">
-          <li>4 jaar ervaring in .NET (WPF, ASP.NET, API-ontwikkeling)</li>
-          <li>3 jaar ervaring in Laravel en RESTful backends</li>
-          <li>2,5 jaar ervaring met JavaScript, React en Next.js</li>
-          <li>1 jaar ervaring met Kotlin (Android + backend) en Python</li>
-          <li>Alle ervaring via projecten, opleiding en zelfstudie</li>
+          <li>2× stage van 6 maanden (1 jaar stage-ervaring)</li>
+          <li>4 jaar .NET — via opleiding &amp; stage</li>
+          <li>3 jaar Laravel — via stage &amp; projecten</li>
+          <li>2,5 jaar JS / React / Next.js — via opleiding &amp; projecten</li>
+          <li>Geen betaalde werkervaring — wel aantoonbare praktijkervaring</li>
         </ul>
       </div>
     </div>
@@ -763,6 +764,38 @@
           <span class="t-pill">SOLID-principes</span>
         </div>
         <p class="tools-note">Talen: Nederlands (moedertaal) · Engels (vloeiend lezen/schrijven, goed spreken)</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- STAGE -->
+  <section class="ar-section" id="stage">
+    <div class="section-header">
+      <p class="s-eyebrow">Praktijkervaring</p>
+      <h2 class="s-title">Stage-ervaring</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-top">
+          <span class="tl-title">Stage 1 — Softwareontwikkeling</span>
+          <span class="tl-status done">6 maanden</span>
+        </div>
+        <p class="tl-body">
+          Stage met focus op <strong>C# .NET en backend development</strong>. Gewerkt aan interne tooling en API-integraties binnen een professionele codebase. Ervaring opgedaan met versiebeheer, code reviews en samenwerken in een team.<br>
+          <em style="color:rgba(200,232,255,0.28); font-size:0.85em;">Bedrijfsnaam · periode invullen</em>
+        </p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-top">
+          <span class="tl-title">Stage 2 — Webontwikkeling</span>
+          <span class="tl-status done">6 maanden</span>
+        </div>
+        <p class="tl-body">
+          Stage met focus op <strong>Laravel en webapplicaties</strong>. Deelgenomen aan sprints, features gebouwd en bijgedragen aan kwaliteitsborging via testing en code reviews.<br>
+          <em style="color:rgba(200,232,255,0.28); font-size:0.85em;">Bedrijfsnaam · periode invullen</em>
+        </p>
       </div>
     </div>
   </section>
@@ -951,16 +984,16 @@
   }
 
   // ════════════════════════════════════════════════════════════════════════════
+  // ════════════════════════════════════════════════════════════════════════════
   // ── BEAUTIFUL PDF GENERATOR ─────────────────────────────────────────────────
   // ════════════════════════════════════════════════════════════════════════════
   function downloadPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'pt', format: 'a4', orientation: 'portrait' });
 
-    const PW = doc.internal.pageSize.getWidth();
-    const PH = doc.internal.pageSize.getHeight();
+    const PW = doc.internal.pageSize.getWidth();   // 595.28
+    const PH = doc.internal.pageSize.getHeight();  // 841.89
 
-    // ── Colour palette ─────────────────────────────────────────────────────────
     const C = {
       sidebarBg   : [6,  12, 26],
       sidebarBg2  : [12, 22, 48],
@@ -981,517 +1014,422 @@
       lineColor   : [218, 226, 240],
       tagBg       : [234, 241, 252],
       tagText     : [68,  98, 142],
-      statBg      : [240, 245, 255],
+      orange      : [220, 150, 60],
     };
 
-    const SW = 190;
-    const CX = SW;
-    const CW = PW - SW;
+    const SW  = 190;                 // sidebar width
+    const CX  = SW;                  // content x-start
+    const CW  = PW - SW;             // content width
+    const RX  = CX + 26;             // content text x
+    const RW  = CW - 40;             // content text width
+    const SX  = 20;                  // sidebar text x
+    const SIW = SW - SX - 14;        // sidebar inner width
+    const LH  = 13;                  // body line height
 
-    // ── helpers ───────────────────────────────────────────────────────────────
-    const setRGB  = (col) => doc.setTextColor(...col);
-    const setFill = (col) => doc.setFillColor(...col);
-    const setDraw = (col) => doc.setDrawColor(...col);
+    // ── primitives ────────────────────────────────────────────────────────────
+    const setRGB  = c => doc.setTextColor(...c);
+    const setFill = c => doc.setFillColor(...c);
+    const setDraw = c => doc.setDrawColor(...c);
+    const opacity = v => doc.setGState(new doc.GState({ opacity: v }));
 
-    function fillRect(x, y, w, h, r=0) {
-      if (r > 0) doc.roundedRect(x, y, w, h, r, r, 'F');
-      else { doc.rect(x, y, w, h, 'F'); }
+    function fRect(x, y, w, h, r=0) {
+      r > 0 ? doc.roundedRect(x, y, w, h, r, r, 'F') : doc.rect(x, y, w, h, 'F');
+    }
+    function sRect(x, y, w, h, r=0) {
+      doc.setLineWidth(0.4);
+      r > 0 ? doc.roundedRect(x, y, w, h, r, r, 'S') : doc.rect(x, y, w, h, 'S');
+    }
+    function hLine(x1, x2, y) { doc.setLineWidth(0.5); doc.line(x1, y, x2, y); }
+
+    // Measure text height (in pt) for a string at current font settings
+    function textH(str, maxW, lineH=LH) {
+      return doc.splitTextToSize(str, maxW).length * lineH;
     }
 
-    function strokeRect(x, y, w, h, r=0) {
-      if (r > 0) doc.roundedRect(x, y, w, h, r, r, 'S');
-      else doc.rect(x, y, w, h, 'S');
+    // Write wrapped text, return new y
+    function writeText(str, x, y, maxW, lineH=LH) {
+      doc.text(doc.splitTextToSize(str, maxW), x, y);
+      return y + textH(str, maxW, lineH);
     }
 
-    function hline(x1, x2, y, thickness=0.5) {
-      doc.setLineWidth(thickness);
-      doc.line(x1, y, x2, y);
+    // ── Page backgrounds ──────────────────────────────────────────────────────
+    function paintBg() {
+      setFill(C.bodyBg);    fRect(SW, 0, CW, PH);
+      setFill(C.sidebarBg); fRect(0,  0, SW, PH);
+      setFill([14, 26, 58]); opacity(0.22); fRect(0, 0, SW, 260); opacity(1);
+      setFill(C.accent); fRect(0,  0, SW, 4);
+      setFill(C.accent); fRect(SW, 0, CW, 4);
+      setFill([0,0,0]); opacity(0.10); fRect(SW-8, 0, 8, PH); opacity(1);
     }
+    paintBg();
 
-    function wrapText(str, x, y, maxW, lineH=13) {
-      const lines = doc.splitTextToSize(str, maxW);
-      doc.text(lines, x, y);
-      return y + lines.length * lineH;
-    }
-
-    // ── Fill page backgrounds ─────────────────────────────────────────────────
-    function paintBackground() {
-      // Right content background
-      setFill(C.bodyBg); fillRect(SW, 0, CW, PH);
-      // Sidebar
-      setFill(C.sidebarBg); fillRect(0, 0, SW, PH);
-      // Sidebar subtle gradient at top
-      setFill([14, 26, 58]);
-      doc.setGState(new doc.GState({ opacity: 0.25 }));
-      fillRect(0, 0, SW, 240);
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
-      // Accent top strips
-      setFill(C.accent); fillRect(0, 0, SW, 4);
-      setFill(C.accent); fillRect(SW, 0, CW, 4);
-      // Sidebar right shadow
-      setFill([0,0,0]);
-      doc.setGState(new doc.GState({ opacity: 0.12 }));
-      fillRect(SW - 8, 0, 8, PH);
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
-    }
-
-    paintBackground();
-
-    // ── SIDEBAR ───────────────────────────────────────────────────────────────
+    // ════════════════════════════════════════════════════════════════════════
+    // SIDEBAR
+    // ════════════════════════════════════════════════════════════════════════
     let sy = 56;
-    const SX = 20;
-    const SIW = SW - SX - 14;  // sidebar inner width
 
-    // Decorative circle behind name
-    setFill([130, 195, 235]);
-    doc.setGState(new doc.GState({ opacity: 0.05 }));
-    doc.ellipse(SW/2, sy+38, 72, 58, 'F');
-    doc.setGState(new doc.GState({ opacity: 1.0 }));
+    // Glow circle behind name
+    setFill(C.accent); opacity(0.05);
+    doc.ellipse(SW/2, sy+42, 72, 58, 'F');
+    opacity(1);
 
     // Eyebrow
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(6.2);
-    doc.setCharSpace(2.4);
-    setRGB(C.accentDim);
-    doc.text('SOFTWARE DEVELOPER', SX, sy);
-    doc.setCharSpace(0);
-    sy += 13;
+    doc.setFont('helvetica','normal'); doc.setFontSize(6.2); doc.setCharSpace(2.4);
+    setRGB(C.accentDim); doc.text('SOFTWARE DEVELOPER', SX, sy);
+    doc.setCharSpace(0); sy += 13;
 
-    // Name — stacked lines
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(23);
-    setRGB(C.white);
-    doc.text('RAUL', SX, sy);          sy += 24;
-    doc.text('VAN DER', SX, sy);       sy += 24;
-    doc.text('ZANDE', SX, sy);         sy += 14;
+    // Name
+    doc.setFont('helvetica','bold'); doc.setFontSize(23); setRGB(C.white);
+    doc.text('RAUL', SX, sy);    sy += 24;
+    doc.text('VAN DER', SX, sy); sy += 24;
+    doc.text('ZANDE', SX, sy);   sy += 14;
 
-    // Accent bar under name
-    setFill(C.accent); fillRect(SX, sy, 40, 3, 1.5);
-    sy += 16;
+    setFill(C.accent); fRect(SX, sy, 40, 3, 1.5); sy += 16;
 
-    // Sub-role
-    doc.setFont('helvetica', 'bolditalic');
-    doc.setFontSize(8);
-    setRGB(C.frostDim);
-    doc.text('.NET & Laravel Specialist', SX, sy);
-    sy += 16;
+    doc.setFont('helvetica','bolditalic'); doc.setFontSize(8); setRGB(C.frostDim);
+    doc.text('.NET & Laravel Specialist', SX, sy); sy += 16;
 
-    // ── Info rows ─────────────────────────────────────────────────────────────
-    const infoRows = [
-      { sym: '◉', val: 'Veghel, Nederland' },
-      { sym: '◈', val: '21 jaar' },
-      { sym: '◷', val: '32 uur / week' },
-      { sym: '⬡', val: 'HBO Informatica' },
+    // Info chips
+    const chips = [
+      { s:'◉', v:'Veghel, Nederland' },
+      { s:'◈', v:'21 jaar' },
+      { s:'◷', v:'32 uur / week' },
+      { s:'⬡', v:'HBO Informatica' },
+      { s:'◆', v:'2× stage 6 mnd' },
     ];
-
-    for (const row of infoRows) {
-      setFill(C.sidebarBg2);
-      doc.setGState(new doc.GState({ opacity: 0.65 }));
-      fillRect(SX - 4, sy - 11, SIW + 8, 17, 3);
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
-
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
-      setRGB(C.accent);
-      doc.text(row.sym, SX + 2, sy);
-
+    for (const c of chips) {
+      setFill(C.sidebarBg2); opacity(0.65); fRect(SX-4, sy-11, SIW+8, 17, 3); opacity(1);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7); setRGB(C.accent);
+      doc.text(c.s, SX+2, sy);
       doc.setFontSize(7.8); setRGB(C.frostDim);
-      doc.text(row.val, SX + 14, sy);
+      doc.text(c.v, SX+14, sy);
       sy += 20;
     }
-    sy += 5;
+    sy += 4;
 
-    // ── Sidebar divider ───────────────────────────────────────────────────────
+    // sidebar divider
     function sDiv(y) {
-      setDraw([60, 100, 140]);
-      doc.setGState(new doc.GState({ opacity: 0.22 }));
-      hline(SX, SW - 14, y, 0.6);
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      setDraw([60,100,140]); opacity(0.22); hLine(SX, SW-14, y); opacity(1);
       return y + 13;
     }
-
-    // ── Sidebar section heading ───────────────────────────────────────────────
+    // sidebar section head
     function sHead(label, y) {
-      // Accent dot
-      setFill(C.accent); fillRect(SX - 8, y - 5.5, 4, 4, 2);
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(6.3);
-      doc.setCharSpace(2.1); setRGB(C.accent);
-      doc.text(label, SX, y);
-      doc.setCharSpace(0);
+      setFill(C.accent); fRect(SX-8, y-5.5, 4, 4, 2);
+      doc.setFont('helvetica','bold'); doc.setFontSize(6.3); doc.setCharSpace(2.1);
+      setRGB(C.accent); doc.text(label, SX, y); doc.setCharSpace(0);
       return y + 13;
     }
 
     sy = sDiv(sy);
-
-    // ── SKILLS ────────────────────────────────────────────────────────────────
     sy = sHead('VAARDIGHEDEN', sy);
 
+    // Skills
     const skills = [
-      { name: 'C# .NET',       pct: 85, yrs: '4 jr',   lvl: '4/5' },
-      { name: 'PHP (Laravel)', pct: 70, yrs: '3 jr',   lvl: '3/5' },
-      { name: 'JavaScript',    pct: 65, yrs: '2.5 jr', lvl: '3/5' },
-      { name: 'Kotlin',        pct: 45, yrs: '1 jr',   lvl: '2/5' },
-      { name: 'Python',        pct: 40, yrs: '1 jr',   lvl: '2/5' },
+      { name:'C# .NET',       pct:85, yrs:'4 jr',   lvl:'4/5', note:'stage & studie' },
+      { name:'PHP (Laravel)', pct:70, yrs:'3 jr',   lvl:'3/5', note:'stage & proj.' },
+      { name:'JavaScript',    pct:65, yrs:'2.5 jr', lvl:'3/5', note:'studie & proj.' },
+      { name:'Kotlin',        pct:45, yrs:'1 jr',   lvl:'2/5', note:'studie & proj.' },
+      { name:'Python',        pct:40, yrs:'1 jr',   lvl:'2/5', note:'studie & proj.' },
     ];
-
     for (const sk of skills) {
-      // Name
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(8.8); setRGB(C.frost);
+      doc.setFont('helvetica','bold'); doc.setFontSize(8.8); setRGB(C.frost);
       doc.text(sk.name, SX, sy);
-      // Years right
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.8); setRGB(C.frostMuted);
-      doc.text(sk.yrs, SW - 40, sy);
-      // Level badge
-      doc.setFontSize(6.5); setRGB(C.accentDim);
-      doc.text(sk.lvl, SW - 22, sy);
-      sy += 6;
-
-      // Track bg
-      setFill([18, 32, 62]); fillRect(SX, sy, SIW, 4.5, 2.2);
-      // Filled portion
-      const fw = Math.round((sk.pct / 100) * SIW);
-      setFill(C.accent); fillRect(SX, sy, fw, 4.5, 2.2);
-      // Glow cap
-      setFill(C.accentBright); fillRect(SX + fw - 3.5, sy + 0.5, 3.5, 3.5, 1.75);
-
-      sy += 13;
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.5); setRGB(C.frostMuted);
+      doc.text(sk.yrs, SW-40, sy);
+      doc.setFontSize(6.5); setRGB(C.accentDim); doc.text(sk.lvl, SW-22, sy);
+      sy += 5;
+      // note line
+      doc.setFontSize(6.2); setRGB(C.frostMuted); doc.text(sk.note, SX, sy);
+      sy += 5;
+      setFill([18,32,62]); fRect(SX, sy, SIW, 4.5, 2.2);
+      const fw = Math.round((sk.pct/100)*SIW);
+      setFill(C.accent); fRect(SX, sy, fw, 4.5, 2.2);
+      setFill(C.accentBright); fRect(SX+fw-3.5, sy+0.5, 3.5, 3.5, 1.75);
+      sy += 14;
     }
 
     sy = sDiv(sy);
-
-    // ── TOOLS ─────────────────────────────────────────────────────────────────
     sy = sHead('TOOLS & WERKWIJZE', sy);
 
-    const tools = ['Git / GitHub', 'GitLab', 'REST & JSON', 'Agile/Scrum', 'SQL', 'CI/CD', 'Clean Code', 'SOLID'];
-    let tx = SX, ty2 = sy;
-    doc.setFont('helvetica', 'normal'); doc.setFontSize(6.8);
-
+    const tools = ['Git/GitHub','GitLab','REST & JSON','Agile/Scrum','SQL','CI/CD','Clean Code','SOLID'];
+    let tx=SX, ty2=sy;
+    doc.setFont('helvetica','normal'); doc.setFontSize(6.8);
     for (const t of tools) {
-      const tw = doc.getTextWidth(t) + 10;
-      if (tx + tw > SW - 10) { tx = SX; ty2 += 15; }
-
-      // Pill bg
-      setFill([18, 36, 70]);
-      doc.setGState(new doc.GState({ opacity: 0.8 }));
-      fillRect(tx, ty2 - 9, tw, 13, 3);
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
-      // Pill border
-      doc.setLineWidth(0.4); setDraw([60, 100, 145]);
-      doc.setGState(new doc.GState({ opacity: 0.3 }));
-      strokeRect(tx, ty2 - 9, tw, 13, 3);
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
-
-      setRGB(C.frostDim);
-      doc.text(t, tx + 5, ty2);
-      tx += tw + 5;
+      const tw = doc.getTextWidth(t)+10;
+      if (tx+tw > SW-10) { tx=SX; ty2+=15; }
+      setFill([18,36,70]); opacity(0.8); fRect(tx, ty2-9, tw, 13, 3); opacity(1);
+      setDraw([60,100,145]); opacity(0.3); sRect(tx, ty2-9, tw, 13, 3); opacity(1);
+      setRGB(C.frostDim); doc.text(t, tx+5, ty2);
+      tx += tw+5;
     }
-    sy = ty2 + 17;
-    sy = sDiv(sy);
+    sy = ty2+17;
 
-    // ── TALEN ─────────────────────────────────────────────────────────────────
+    sy = sDiv(sy);
     sy = sHead('TALEN', sy);
-    const langs = [
-      { name: 'Nederlands', level: 'Moedertaal', pct: 100 },
-      { name: 'Engels',     level: 'Vloeiend',   pct: 82 },
-    ];
-    for (const lg of langs) {
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); setRGB(C.frost);
-      doc.text(lg.name, SX, sy);
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.accentDim);
-      const lw = doc.getTextWidth(lg.level);
-      doc.text(lg.level, SW - lw - 14, sy);
-      sy += 6;
-      setFill([18, 32, 62]); fillRect(SX, sy, SIW, 3.5, 1.75);
-      setFill(C.accent); fillRect(SX, sy, Math.round((lg.pct/100)*SIW), 3.5, 1.75);
+    for (const lg of [{n:'Nederlands',l:'Moedertaal',p:100},{n:'Engels',l:'Vloeiend',p:82}]) {
+      doc.setFont('helvetica','bold'); doc.setFontSize(8.5); setRGB(C.frost);
+      doc.text(lg.n, SX, sy);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7); setRGB(C.accentDim);
+      const lw=doc.getTextWidth(lg.l); doc.text(lg.l, SW-lw-14, sy); sy += 6;
+      setFill([18,32,62]); fRect(SX, sy, SIW, 3.5, 1.75);
+      setFill(C.accent); fRect(SX, sy, Math.round((lg.p/100)*SIW), 3.5, 1.75);
       sy += 13;
     }
 
-    // ── Sidebar footer ────────────────────────────────────────────────────────
-    const sFootY = PH - 48;
-    sDiv(sFootY);
-    doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.frostMuted);
-    doc.text('Beschikbaar per direct', SX, sFootY + 13);
-    doc.setFont('helvetica', 'bold'); doc.setFontSize(7.2); setRGB(C.accentDim);
-    doc.text('Veghel, Nederland', SX, sFootY + 24);
+    // Sidebar footer
+    const sfY = PH-48; sDiv(sfY);
+    doc.setFont('helvetica','normal'); doc.setFontSize(7); setRGB(C.frostMuted);
+    doc.text('Beschikbaar per direct', SX, sfY+13);
+    doc.setFont('helvetica','bold'); doc.setFontSize(7.2); setRGB(C.accentDim);
+    doc.text('Veghel, Nederland', SX, sfY+25);
 
-
-    // ════════════════════════════════════════════════════════════════════════════
-    // ── RIGHT CONTENT ──────────────────────────────────────────────────────────
-    // ════════════════════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════════════════
+    // CONTENT (right side) — fully pre-measured to prevent overflow
+    // ════════════════════════════════════════════════════════════════════════
     let cy = 58;
-    const RX  = CX + 26;
-    const RW  = CW - 40;
 
-    // ── New page helper ───────────────────────────────────────────────────────
     function newPage() {
-      doc.addPage();
-      cy = 48;
-      // Paint bg
-      setFill(C.bodyBg); doc.rect(SW, 0, CW, PH, 'F');
-      setFill(C.sidebarBg); doc.rect(0, 0, SW, PH, 'F');
-      setFill([14,26,58]);
-      doc.setGState(new doc.GState({ opacity: 0.2 }));
-      doc.rect(0, 0, SW, PH, 'F');
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      doc.addPage(); cy = 50;
+      setFill(C.bodyBg);    doc.rect(SW, 0, CW, PH, 'F');
+      setFill(C.sidebarBg); doc.rect(0,  0, SW, PH, 'F');
+      setFill([14,26,58]); opacity(0.18); doc.rect(0, 0, SW, PH, 'F'); opacity(1);
       setFill(C.accent); doc.rect(0, 0, SW, 4, 'F');
       setFill(C.accent); doc.rect(SW, 0, CW, 4, 'F');
-      setFill([0,0,0]);
-      doc.setGState(new doc.GState({ opacity: 0.1 }));
-      doc.rect(SW-8, 0, 8, PH, 'F');
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
-      // Sidebar mini header
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); setRGB(C.frost);
-      doc.text('RAUL VAN DER ZANDE', SX, 20);
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5); doc.setCharSpace(1.5);
-      setRGB(C.frostMuted); doc.text('SOFTWARE DEVELOPER', SX, 30);
-      doc.setCharSpace(0);
+      setFill([0,0,0]); opacity(0.10); doc.rect(SW-8, 0, 8, PH, 'F'); opacity(1);
+      doc.setFont('helvetica','bold'); doc.setFontSize(8.5); setRGB(C.frost);
+      doc.text('RAUL VAN DER ZANDE', SX, 22);
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.5); doc.setCharSpace(1.5);
+      setRGB(C.frostMuted); doc.text('SOFTWARE DEVELOPER', SX, 33); doc.setCharSpace(0);
     }
 
-    // ── Content section heading ───────────────────────────────────────────────
-    function cHead(title, eyebrow, y) {
-      if (y > PH - 110) { newPage(); y = cy; }
-      // Eyebrow
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.3);
-      doc.setCharSpace(2.0); setRGB(C.inkMuted);
-      doc.text(eyebrow.toUpperCase(), RX, y);
-      doc.setCharSpace(0);
-      y += 12;
-      // Title
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(17); setRGB(C.ink);
-      doc.text(title, RX, y);
-      y += 8;
-      // Underline duo
-      setFill(C.accent); fillRect(RX, y, 30, 3, 1.5);
-      setFill(C.lineColor); fillRect(RX + 32, y, RW - 32, 0.7);
-      y += 15;
-      return y;
+    function cHead(title, eyebrow, minH=80) {
+      if (cy + minH > PH - 30) { newPage(); }
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.3); doc.setCharSpace(2.0);
+      setRGB(C.inkMuted); doc.text(eyebrow.toUpperCase(), RX, cy); doc.setCharSpace(0);
+      cy += 12;
+      doc.setFont('helvetica','bold'); doc.setFontSize(17); setRGB(C.ink);
+      doc.text(title, RX, cy); cy += 8;
+      setFill(C.accent); fRect(RX, cy, 30, 3, 1.5);
+      setFill(C.lineColor); fRect(RX+32, cy, RW-32, 0.7);
+      cy += 15;
     }
 
-    // ── OVER MIJ ──────────────────────────────────────────────────────────────
-    cy = cHead('Over mij', 'Introductie', cy);
+    // ── OVER MIJ ─────────────────────────────────────────────────────────────
+    cHead('Over mij', 'Introductie');
 
-    doc.setFont('helvetica', 'normal'); doc.setFontSize(8.8); setRGB(C.inkMid);
-    cy = wrapText(
-      'Ambitieuze backend-georiënteerde developer van 21 jaar met een brede ervaring in .NET, Laravel, JavaScript, Kotlin en Python — opgebouwd via studie-, stage- en hobbyprojecten. Ik schrijf graag clean, goed gedocumenteerde code en werk gestructureerd.',
-      RX, cy, RW, 13.5
-    );
-    cy += 7;
-    cy = wrapText(
-      'Momenteel volg ik een deeltijd HBO-opleiding Informatica, waarmee ik theorie direct koppel aan praktijk. Ik zoek een rol voor 32 uur/week als backend of full-stack developer.',
-      RX, cy, RW, 13.5
-    );
-    cy += 18;
+    const paraA = 'Ambitieuze backend developer van 21 jaar — mijn ervaring is opgebouwd via studie, twee stages en eigen projecten. Ik heb nog geen betaalde werkervaring in loondienst, maar wel aantoonbare praktijkervaring en een professionele werkhouding.';
+    const paraB = 'Twee stages van elk 6 maanden (totaal 1 jaar) geven mij inzicht in professionele codebases, sprints, versiebeheer en code reviews. Momenteel volg ik een deeltijd HBO-opleiding Informatica.';
+    doc.setFont('helvetica','normal'); doc.setFontSize(8.8); setRGB(C.inkMid);
+    cy = writeText(paraA, RX, cy, RW, 13.5); cy += 7;
+    cy = writeText(paraB, RX, cy, RW, 13.5); cy += 18;
 
-    // ── Stats row ─────────────────────────────────────────────────────────────
-    const stats = [
-      { num: '4 jr',   sub: 'C# .NET' },
-      { num: '3 jr',   sub: 'Laravel' },
-      { num: '2.5 jr', sub: 'JS/React' },
-      { num: '5+',     sub: 'Projecten' },
+    // Stats row
+    const stats=[{n:'2× stage',s:'6 mnd elk'},{n:'4 jr',s:'C# .NET'},{n:'3 jr',s:'Laravel'},{n:'2.5 jr',s:'JS/React'}];
+    const sbW=(RW-15)/4;
+    for (let i=0;i<stats.length;i++){
+      const bx=RX+i*(sbW+5);
+      setFill(C.contentBg); fRect(bx, cy-13, sbW, 46, 5);
+      setFill(C.accent); fRect(bx, cy-13, sbW, 3.5, 2.5);
+      doc.setFont('helvetica','bold'); doc.setFontSize(i===0?12:16); setRGB(C.ink);
+      doc.text(stats[i].n, bx+9, cy+10);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7); setRGB(C.inkLight);
+      doc.text(stats[i].s, bx+9, cy+23);
+      setDraw(C.lineColor); opacity(0.8); sRect(bx, cy-13, sbW, 46, 5); opacity(1);
+    }
+    cy += 54;
+
+    // ── STAGE-ERVARING ───────────────────────────────────────────────────────
+    cHead('Stage-ervaring', 'Praktijkervaring (niet betaald)');
+
+    const stages = [
+      {
+        t: 'Stage 1 — Softwareontwikkeling',
+        period: '6 maanden',
+        badge: 'C# .NET · Backend',
+        body: 'Focus op C# .NET en backend development. Gewerkt aan interne tooling en API-integraties binnen een professionele codebase. Praktijkervaring met versiebeheer, code reviews en teamsamenwerking.',
+        note: 'Bedrijfsnaam / periode invullen'
+      },
+      {
+        t: 'Stage 2 — Webontwikkeling',
+        period: '6 maanden',
+        badge: 'Laravel · Webapplicaties',
+        body: 'Focus op Laravel en webapplicaties. Deelgenomen aan sprints, nieuwe features gebouwd en bijgedragen aan kwaliteitsborging via testing en pull request reviews.',
+        note: 'Bedrijfsnaam / periode invullen'
+      },
     ];
 
-    const statBoxW = (RW - 15) / 4;
-    for (let i = 0; i < stats.length; i++) {
-      const bx = RX + i * (statBoxW + 5);
+    for (const st of stages) {
+      // Pre-measure height
+      doc.setFont('helvetica','normal'); doc.setFontSize(8.3);
+      const bodyLines = doc.splitTextToSize(st.body, RW-6).length;
+      const noteLines = doc.splitTextToSize(st.note, RW-6).length;
+      const cardH = 16 + bodyLines*13 + noteLines*11 + 26;
 
-      // Card
-      setFill(C.contentBg); fillRect(bx, cy - 13, statBoxW, 46, 5);
-      // Top accent strip
-      setFill(C.accent); fillRect(bx, cy - 13, statBoxW, 3.5, 2.5);
-      // Number
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(16); setRGB(C.ink);
-      doc.text(stats[i].num, bx + 9, cy + 10);
-      // Label
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.inkLight);
-      doc.text(stats[i].sub, bx + 9, cy + 23);
+      if (cy + cardH > PH - 30) { newPage(); }
 
-      // Subtle border
-      doc.setLineWidth(0.4); setDraw(C.lineColor);
-      doc.setGState(new doc.GState({ opacity: 0.8 }));
-      doc.roundedRect(bx, cy-13, statBoxW, 46, 5, 5, 'S');
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      setFill(C.contentBg); fRect(RX-8, cy-14, RW+8, cardH, 5);
+      setFill(C.accent);    fRect(RX-8, cy-14, 3.5, cardH, 2);
+      setDraw(C.lineColor); opacity(0.6); sRect(RX-8, cy-14, RW+8, cardH, 5); opacity(1);
+
+      doc.setFont('helvetica','bold'); doc.setFontSize(10.5); setRGB(C.ink);
+      doc.text(st.t, RX+4, cy);
+
+      // Period badge
+      const pW=doc.getTextWidth(st.period)+12;
+      setFill(C.tagBg); fRect(RX+RW-pW, cy-11, pW, 14, 3);
+      setDraw([180,200,230]); sRect(RX+RW-pW, cy-11, pW, 14, 3);
+      doc.setFont('helvetica','bold'); doc.setFontSize(6.5); setRGB(C.green);
+      doc.text(st.period, RX+RW-pW+6, cy);
+      cy += 7;
+
+      // Tech badge
+      const tW=doc.getTextWidth(st.badge)+12;
+      setFill(C.tagBg); fRect(RX+4, cy-8, tW, 12, 3);
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.5); setRGB(C.tagText);
+      doc.text(st.badge, RX+10, cy);
+      cy += 11;
+
+      doc.setFont('helvetica','normal'); doc.setFontSize(8.3); setRGB(C.inkMid);
+      cy = writeText(st.body, RX+4, cy, RW-6, 13); cy += 4;
+
+      doc.setFont('helvetica','italic'); doc.setFontSize(7.5); setRGB(C.inkMuted);
+      cy = writeText('※ ' + st.note, RX+4, cy, RW-8, 11); cy += 8;
     }
-    cy += 52;
+    cy += 6;
 
-    // ── PROJECTEN ─────────────────────────────────────────────────────────────
-    cy = cHead('Projecten', 'Selectie van relevante projecten', cy);
+    // ── PROJECTEN ────────────────────────────────────────────────────────────
+    cHead('Projecten', 'Selectie van relevante projecten');
 
     const projects = [
-      {
-        t: 'Racecar Management App',
-        b: 'C# .NET · WPF · ASP.NET Web API',
-        bullets: [
-          'WPF desktop UI met eigen ASP.NET Web API als backend.',
-          'CRUD, filtering, validatie en real-time UI-updates geïmplementeerd.',
-          'Gelaagde architectuur: UI layer, business logic, data layer.',
-        ]
-      },
-      {
-        t: 'Blog & Reactieplatform',
-        b: 'Next.js · JavaScript · REST API',
-        bullets: [
-          'Next.js met server-side rendering voor snelle laadtijden en goede SEO.',
-          'Posts schrijven, lezen en reageren — real-time bijgewerkt.',
-          'Component-architectuur, formuliervalidatie en UI/UX-aandacht.',
-        ]
-      },
-      {
-        t: "REST API's in Laravel",
-        b: 'PHP · Laravel · REST',
-        bullets: [
-          'RESTful endpoints met resource-structuur, auth-middleware.',
-          'Validatie, foutafhandeling en basisdocumentatie van endpoints.',
-        ]
-      },
-      {
-        t: 'RMC Android App',
-        b: 'Kotlin · Android · Backend API',
-        bullets: [
-          'Mobiele UI met eigen Kotlin-backend voor data-synchronisatie.',
-          'Stabiele netwerkcommunicatie en uitgebreide foutafhandeling.',
-        ]
-      },
-      {
-        t: 'Conversational Buddy Robot',
-        b: 'Python · AI/NLP — lopend',
-        bullets: [
-          'Conversational AI experiment met externe NLP-libraries.',
-          'Modulaire opzet voor eenvoudige uitbreiding van functionaliteiten.',
-        ]
-      },
+      { t:'Racecar Management App', b:'C# .NET · WPF · ASP.NET Web API',
+        bullets:['WPF desktop UI met eigen ASP.NET Web API als backend.',
+                 'CRUD, filtering, validatie en real-time UI-updates geïmplementeerd.',
+                 'Gelaagde architectuur: UI, business logic, data layer.']},
+      { t:'Blog & Reactieplatform', b:'Next.js · JavaScript · REST API',
+        bullets:['Next.js SSR voor snelle laadtijden en goede SEO.',
+                 'Posts schrijven, lezen en reageren — real-time bijgewerkt.',
+                 'Component-architectuur, formuliervalidatie en aandacht voor UX.']},
+      { t:"REST API's in Laravel", b:'PHP · Laravel · REST',
+        bullets:['RESTful endpoints met resource-structuur en auth-middleware.',
+                 'Validatie, foutafhandeling en basisdocumentatie van endpoints.']},
+      { t:'RMC Android App', b:'Kotlin · Android · Backend API',
+        bullets:['Mobiele UI met eigen Kotlin-backend voor data-synchronisatie.',
+                 'Stabiele netwerkcommunicatie en uitgebreide foutafhandeling.']},
+      { t:'Conversational Buddy Robot', b:'Python · AI/NLP — lopend',
+        bullets:['Conversational AI experiment met externe NLP-libraries.',
+                 'Modulaire opzet voor eenvoudige uitbreiding van functionaliteiten.']},
     ];
 
     for (const proj of projects) {
-      if (cy > PH - 90) { newPage(); cy += 8; }
+      // Pre-measure each bullet
+      doc.setFont('helvetica','normal'); doc.setFontSize(7.8);
+      let bullH = 0;
+      for (const bull of proj.bullets) {
+        bullH += doc.splitTextToSize(bull, RW-18).length * 12.5 + 3;
+      }
+      const cardH = 40 + bullH;
 
-      // Card height estimate
-      const estH = 34 + proj.bullets.length * 14;
+      if (cy + cardH > PH - 30) { newPage(); }
 
-      // Card background
-      setFill(C.contentBg); fillRect(RX - 8, cy - 13, RW + 8, estH, 5);
-      // Left accent strip
-      setFill(C.accent); fillRect(RX - 8, cy - 13, 3.5, estH, 2);
-      // Card border
-      doc.setLineWidth(0.4); setDraw(C.lineColor);
-      doc.setGState(new doc.GState({ opacity: 0.7 }));
-      doc.roundedRect(RX - 8, cy - 13, RW + 8, estH, 5, 5, 'S');
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      setFill(C.contentBg); fRect(RX-8, cy-13, RW+8, cardH, 5);
+      setFill(C.accent);    fRect(RX-8, cy-13, 3.5, cardH, 2);
+      setDraw(C.lineColor); opacity(0.7); sRect(RX-8, cy-13, RW+8, cardH, 5); opacity(1);
 
-      // Title
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); setRGB(C.ink);
-      doc.text(proj.t, RX + 4, cy);
+      doc.setFont('helvetica','bold'); doc.setFontSize(10.5); setRGB(C.ink);
+      doc.text(proj.t, RX+4, cy);
 
-      // Badge
-      const bW = doc.getTextWidth(proj.b) + 12;
-      setFill(C.tagBg); fillRect(RX + RW - bW, cy - 11, bW, 14, 3);
-      doc.setLineWidth(0.35); setDraw([180, 200, 230]);
-      doc.roundedRect(RX + RW - bW, cy - 11, bW, 14, 3, 3, 'S');
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5); setRGB(C.tagText);
-      doc.text(proj.b, RX + RW - bW + 6, cy);
+      const bW=doc.getTextWidth(proj.b)+12;
+      setFill(C.tagBg); fRect(RX+RW-bW, cy-11, bW, 14, 3);
+      setDraw([180,200,230]); sRect(RX+RW-bW, cy-11, bW, 14, 3);
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.5); setRGB(C.tagText);
+      doc.text(proj.b, RX+RW-bW+6, cy);
       cy += 6;
 
-      // Divider under title
-      setFill(C.accent); fillRect(RX + 4, cy, 22, 1.5, 0.75);
-      setFill(C.lineColor); fillRect(RX + 28, cy, RW - 28 - bW - 6, 0.6);
+      setFill(C.accent); fRect(RX+4, cy, 22, 1.5, 0.75);
+      setFill(C.lineColor); fRect(RX+28, cy, RW-28-bW-6, 0.6);
       cy += 11;
 
-      // Bullets
       for (const bull of proj.bullets) {
-        setFill(C.accent); fillRect(RX + 6, cy - 4.5, 4.5, 4.5, 2.25);
-        doc.setFont('helvetica', 'normal'); doc.setFontSize(7.8); setRGB(C.inkMid);
-        cy = wrapText(bull, RX + 16, cy, RW - 18, 12.5);
-        cy += 2;
+        setFill(C.accent); fRect(RX+6, cy-4.5, 4.5, 4.5, 2.25);
+        doc.setFont('helvetica','normal'); doc.setFontSize(7.8); setRGB(C.inkMid);
+        cy = writeText(bull, RX+16, cy, RW-18, 12.5); cy += 3;
       }
-      cy += 10;
+      cy += 8;
     }
 
-    // ── OPLEIDING ─────────────────────────────────────────────────────────────
-    if (cy > PH - 140) { newPage(); cy += 6; }
-    cy = cHead('Opleiding', 'Opleidingsachtergrond', cy);
+    // ── OPLEIDING ────────────────────────────────────────────────────────────
+    cHead('Opleiding', 'Opleidingsachtergrond');
 
     const edus = [
-      {
-        t: 'HBO Informatica (deeltijd)',
-        s: 'In opleiding', sc: C.green,
-        body: 'Deeltijdopleiding met focus op softwareontwikkeling, architectuur, databases en professionele vaardigheden. Theorie wordt direct gekoppeld aan praktijkprojecten.'
-      },
-      {
-        t: 'MBO 4 Software Development',
-        s: 'Afgerond', sc: C.inkLight,
-        body: 'Brede basis in programmeren, webontwikkeling, OOP en projectsamenwerking. Fundament voor .NET, PHP en JavaScript-vaardigheden.'
-      },
+      { t:'HBO Informatica (deeltijd)', s:'In opleiding', sc:C.green,
+        body:'Deeltijdopleiding met focus op softwareontwikkeling, architectuur, databases en professionele vaardigheden. Theorie direct gekoppeld aan praktijkprojecten.' },
+      { t:'MBO 4 Software Development', s:'Afgerond', sc:C.inkLight,
+        body:'Brede basis in programmeren, webontwikkeling, OOP en projectsamenwerking. Fundament voor .NET, PHP en JavaScript-vaardigheden.' },
     ];
 
     for (const ed of edus) {
-      if (cy > PH - 90) { newPage(); cy += 4; }
-      const cardH = 68;
-      setFill(C.contentBg); fillRect(RX - 8, cy - 14, RW + 8, cardH, 5);
-      setFill(C.accent); fillRect(RX - 8, cy - 14, 3.5, cardH, 2);
-      doc.setLineWidth(0.4); setDraw(C.lineColor);
-      doc.setGState(new doc.GState({ opacity: 0.6 }));
-      doc.roundedRect(RX - 8, cy - 14, RW + 8, cardH, 5, 5, 'S');
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      doc.setFont('helvetica','normal'); doc.setFontSize(8.3);
+      const bLines = doc.splitTextToSize(ed.body, RW-6).length;
+      const cardH = 14 + bLines*13 + 28;
 
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(10.8); setRGB(C.ink);
-      doc.text(ed.t, RX + 4, cy);
+      if (cy + cardH > PH - 30) { newPage(); }
 
-      // Status badge
-      const sW2 = doc.getTextWidth(ed.s) + 14;
-      setFill(C.tagBg); fillRect(RX + RW - sW2, cy - 11, sW2, 14, 3.5);
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(6.8);
-      setRGB(ed.sc); doc.text(ed.s, RX + RW - sW2 + 7, cy);
+      setFill(C.contentBg); fRect(RX-8, cy-14, RW+8, cardH, 5);
+      setFill(C.accent);    fRect(RX-8, cy-14, 3.5, cardH, 2);
+      setDraw(C.lineColor); opacity(0.6); sRect(RX-8, cy-14, RW+8, cardH, 5); opacity(1);
+
+      doc.setFont('helvetica','bold'); doc.setFontSize(10.8); setRGB(C.ink);
+      doc.text(ed.t, RX+4, cy);
+
+      const sW=doc.getTextWidth(ed.s)+14;
+      setFill(C.tagBg); fRect(RX+RW-sW, cy-11, sW, 14, 3.5);
+      doc.setFont('helvetica','bold'); doc.setFontSize(6.8); setRGB(ed.sc);
+      doc.text(ed.s, RX+RW-sW+7, cy);
       cy += 13;
 
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(8.3); setRGB(C.inkMid);
-      cy = wrapText(ed.body, RX + 4, cy, RW - 6, 13);
-      cy += 16;
+      doc.setFont('helvetica','normal'); doc.setFontSize(8.3); setRGB(C.inkMid);
+      cy = writeText(ed.body, RX+4, cy, RW-6, 13); cy += 16;
     }
-
     cy += 6;
 
     // ── EXTRA ─────────────────────────────────────────────────────────────────
-    if (cy > PH - 110) { newPage(); cy += 4; }
-    cy = cHead('Extra & Persoonlijk', 'Werkwijze & interesses', cy);
+    cHead('Extra & Persoonlijk', 'Werkwijze & interesses', 110);
 
     const extras = [
-      { h: 'Werkwijze', body: 'Gestructureerd, leergierig en kritisch op eigen code. Code reviews, documentatie en versiebeheer zijn belangrijk. Open voor mentoring en feedback.' },
-      { h: 'Interesses', body: 'Backend development, API-ontwerp en webplatformen. Daarnaast AI, automation en het bouwen van eigen tooling en experimenten.' },
+      { h:'Werkwijze', body:'Gestructureerd, leergierig en kritisch op eigen code. Code reviews, documentatie en versiebeheer zijn belangrijk. Open voor mentoring en feedback.' },
+      { h:'Interesses', body:'Backend development, API-ontwerp en webplatformen. Daarnaast AI, automation en het bouwen van eigen tooling en experimenten.' },
     ];
+    const hRW=(RW-10)/2;
+    for (let i=0;i<extras.length;i++){
+      const ex=extras[i], ex_x=RX+i*(hRW+10);
+      doc.setFont('helvetica','normal'); doc.setFontSize(8);
+      const bLines=doc.splitTextToSize(ex.body, hRW-4).length;
+      const cardH=16+bLines*13+16;
 
-    const halfRW = (RW - 10) / 2;
-    for (let i = 0; i < extras.length; i++) {
-      const ex = extras[i];
-      const ex_x = RX + i * (halfRW + 10);
-      setFill(C.contentBg); fillRect(ex_x - 6, cy - 12, halfRW + 6, 80, 5);
-      setFill(C.accent); fillRect(ex_x - 6, cy - 12, halfRW + 6, 3.5, 2);
-      doc.setLineWidth(0.4); setDraw(C.lineColor);
-      doc.setGState(new doc.GState({ opacity: 0.6 }));
-      doc.roundedRect(ex_x - 6, cy - 12, halfRW + 6, 80, 5, 5, 'S');
-      doc.setGState(new doc.GState({ opacity: 1.0 }));
+      setFill(C.contentBg); fRect(ex_x-6, cy-12, hRW+6, cardH, 5);
+      setFill(C.accent);    fRect(ex_x-6, cy-12, hRW+6, 3.5, 2);
+      setDraw(C.lineColor); opacity(0.6); sRect(ex_x-6, cy-12, hRW+6, cardH, 5); opacity(1);
 
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(9.5); setRGB(C.ink);
-      doc.text(ex.h, ex_x, cy + 4);
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(8); setRGB(C.inkMid);
-      wrapText(ex.body, ex_x, cy + 19, halfRW - 4, 13);
+      doc.setFont('helvetica','bold'); doc.setFontSize(9.5); setRGB(C.ink);
+      doc.text(ex.h, ex_x, cy+5);
+      doc.setFont('helvetica','normal'); doc.setFontSize(8); setRGB(C.inkMid);
+      writeText(ex.body, ex_x, cy+19, hRW-4, 13);
     }
 
     // ── Page footer on every page ─────────────────────────────────────────────
     const total = doc.internal.getNumberOfPages();
-    for (let p = 1; p <= total; p++) {
+    for (let p=1;p<=total;p++){
       doc.setPage(p);
-      // Footer line
-      setDraw(C.lineColor); doc.setLineWidth(0.5);
-      hline(CX + 10, PW - 20, PH - 22, 0.5);
-      // Page number
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(7); setRGB(C.inkMuted);
-      doc.text(`${p} / ${total}`, PW - 28, PH - 12);
-      // Name watermark footer
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(6.3); doc.setCharSpace(1.1);
-      setRGB(C.inkMuted);
-      doc.text('RAUL VAN DER ZANDE · SOFTWARE DEVELOPER', RX, PH - 12);
+      setDraw(C.lineColor); hLine(CX+10, PW-20, PH-22);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7); setRGB(C.inkMuted);
+      doc.text(`${p} / ${total}`, PW-28, PH-12);
+      doc.setFontSize(6.3); doc.setCharSpace(1.1);
+      doc.text('RAUL VAN DER ZANDE · SOFTWARE DEVELOPER', RX, PH-12);
       doc.setCharSpace(0);
     }
 
     doc.save('CV_Raul_Van_der_Zande.pdf');
+  }
   }
 </script>
 </body>
